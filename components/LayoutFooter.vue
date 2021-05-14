@@ -9,3 +9,18 @@ export default {
   name: 'LayoutFooter',
 }
 </script>
+
+<style lang="scss" scoped>
+@import './assets/styles/modules/_variables.scss';
+
+.footer {
+  background-color: $cDeepGreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    color: $cText;
+  }
+}
+</style>
