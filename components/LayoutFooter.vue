@@ -11,13 +11,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './assets/styles/modules/_variables.scss';
+@import './assets/css/modules/_variables.scss';
 
 .footer {
   background-color: $cDeepGreen;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  height: 80px;
 
   &__text {
     color: $cText;
