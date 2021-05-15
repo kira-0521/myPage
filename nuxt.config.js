@@ -18,6 +18,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // リセットCSS
+    'modern-css-reset',
     // プロジェクト内の CSS ファイル
     '@/assets/css/main.css',
     // プロジェクト内の SCSS ファイル
