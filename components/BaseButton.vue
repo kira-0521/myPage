@@ -1,7 +1,12 @@
 <template>
   <button
     class="el_btn"
-    :style="`color: ${textColor}; background-color: ${bg}; padding: ${paddingHeight}em ${paddingWidth}em`"
+    :style="{
+      color: fore_color,
+      'background-color': bg,
+      padding: `${paddingHeight}em ${paddingWidth}em`,
+      'border-radius': `${weapon}px`,
+    }"
     @click="clickEvent"
   >
     <slot />
@@ -12,7 +17,7 @@
 export default {
   name: 'BaseButton',
   props: {
-    textColor: {
+    fore_color: {
       type: String,
       default: '#f4f9f4',
     },
@@ -27,6 +32,10 @@ export default {
     paddingWidth: {
       type: Number,
       default: 2.5,
+    },
+    weapon: {
+      type: Number,
+      default: 32,
     },
   },
   methods: {
@@ -48,7 +57,6 @@ export default {
   cursor: pointer;
   padding: 1em 2.8em;
   text-align: center;
-  border-radius: 32px;
   display: inline-block;
   letter-spacing: 0.2rem;
   transition: 0.2s ease-in-out;
