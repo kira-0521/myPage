@@ -18,6 +18,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // リセットCSS
+    'modern-css-reset',
     // プロジェクト内の CSS ファイル
     '@/assets/css/main.css',
     // プロジェクト内の SCSS ファイル
@@ -34,6 +36,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // クライアントサイドとサーバーサイドで共有される環境変数
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

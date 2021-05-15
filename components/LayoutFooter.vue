@@ -14,7 +14,7 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .footer {
-  background-color: $cDeepGreen;
+  background-color: $cBlack;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ export default {
   height: 80px;
 
   &__text {
-    color: $cText;
+    color: $cWhite;
   }
 }
 </style>
