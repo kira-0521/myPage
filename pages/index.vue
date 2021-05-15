@@ -3,9 +3,5 @@
 </template>
 
 <script>
-export default {
-  created() {
-    console.log(process.env.TEST)
-  },
-}
+export default {}
 </script>
