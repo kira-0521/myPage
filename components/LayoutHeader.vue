@@ -7,14 +7,57 @@
         </nuxt-link>
       </h1>
 
-      <button class="mobile-menu__btn">
+      <button v-if="false" class="mobile-menu__btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
+      <nav class="global-nav">
+        <ul class="menu">
+          <template v-for="(link, index) in links">
+            <li :key="index" class="menu__item">
+              <nuxt-link class="header__link" :to="`/${link.path}`">{{
+                link.name
+              }}</nuxt-link>
+            </li>
+          </template>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 1,
+          path: '',
+          name: 'Home',
+        },
+        {
+          id: 2,
+          path: 'profile',
+          name: 'Profile',
+        },
+        {
+          id: 3,
+          path: 'blog',
+          name: 'Blog',
+        },
+        {
+          id: 4,
+          path: 'activitys',
+          name: 'Activitys',
+        },
+      ],
+    }
+  },
+}
+</script>
 
 <style scoped lang="scss">
 @import './assets/css/modules/_variables.scss';
@@ -43,10 +86,8 @@
     justify-content: center;
 
     & > a {
-      text-decoration: none;
-      color: inherit;
       & > span {
-        font-size: 28px;
+        font-size: 26px;
         color: $cWhite;
       }
     }
@@ -69,6 +110,20 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  &__item {
+    margin-left: 20px;
+
+    & > a {
+      color: $cWhite;
     }
   }
 }
