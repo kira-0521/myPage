@@ -3,7 +3,7 @@
     <div class="header__inner">
       <h1 class="header__title">
         <nuxt-link to="/">
-          <span>myPage</span>
+          <span>{{ title }}</span>
         </nuxt-link>
       </h1>
 
@@ -17,9 +17,12 @@
         <ul class="menu">
           <template v-for="(link, index) in links">
             <li :key="index" class="menu__item">
-              <nuxt-link class="header__link" :to="`/${link.path}`">{{
-                link.name
-              }}</nuxt-link>
+              <nuxt-link
+                class="header__link"
+                :to="`/${link.path}`"
+                :class="link.className"
+                >{{ link.name }}</nuxt-link
+              >
             </li>
           </template>
         </ul>
@@ -32,26 +35,31 @@
 export default {
   data() {
     return {
+      title: 'myPage',
       links: [
         {
           id: 1,
           path: '',
           name: 'Home',
+          className: '',
         },
         {
           id: 2,
           path: 'profile',
           name: 'Profile',
+          className: '',
         },
         {
           id: 3,
           path: 'blog',
           name: 'Blog',
+          className: '',
         },
         {
           id: 4,
           path: 'activitys',
           name: 'Activitys',
+          className: '',
         },
       ],
     }
