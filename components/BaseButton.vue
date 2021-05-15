@@ -1,7 +1,11 @@
 <template>
   <button
     class="el_btn"
-    :style="`color: ${textColor}; background-color: ${bg}; padding: ${paddingHeight}em ${paddingWidth}em`"
+    :style="{
+      color: fore_color,
+      'background-color': bg,
+      padding: `${paddingHeight}em ${paddingWidth}em`,
+    }"
     @click="clickEvent"
   >
     <slot />
@@ -12,7 +16,7 @@
 export default {
   name: 'BaseButton',
   props: {
-    textColor: {
+    fore_color: {
       type: String,
       default: '#f4f9f4',
     },

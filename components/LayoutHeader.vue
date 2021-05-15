@@ -6,7 +6,7 @@
       </nuxt-link>
     </h1>
 
-    <base-button>
+    <base-button bg="#f4f9f4">
       <span></span>
       <span></span>
       <span></span>
@@ -17,8 +17,12 @@
 <style scoped lang="scss">
 @import './assets/css/modules/_variables.scss';
 
+.header {
+  background-color: $cBlack;
+}
+
 span {
-  background-color: $cWhite;
+  background-color: $cBlack;
   width: 35px;
   height: 2px;
   display: block;
