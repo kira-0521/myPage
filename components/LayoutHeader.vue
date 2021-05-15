@@ -5,5 +5,7 @@
         <span>myPage</span>
       </nuxt-link>
     </h1>
+
+    <base-button> ボタン </base-button>
   </header>
 </template>
