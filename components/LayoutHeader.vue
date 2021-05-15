@@ -6,7 +6,12 @@
       </nuxt-link>
     </h1>
 
-    <base-button bg="#f4f9f4">
+    <base-button
+      bg="#f4f9f4"
+      padding-height="0.3"
+      padding-width="0.5"
+      weapon="3"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -19,6 +24,7 @@
 
 .header {
   background-color: $cBlack;
+  height: 60px;
 }
 
 span {
