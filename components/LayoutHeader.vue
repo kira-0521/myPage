@@ -1,21 +1,18 @@
 <template>
   <header class="header">
-    <h1 class="header__title">
-      <nuxt-link to="/">
-        <span>myPage</span>
-      </nuxt-link>
-    </h1>
+    <div class="header__inner">
+      <h1 class="header__title">
+        <nuxt-link to="/">
+          <span>myPage</span>
+        </nuxt-link>
+      </h1>
 
-    <base-button
-      bg="#f4f9f4"
-      padding-height="0.3"
-      padding-width="0.5"
-      weapon="3"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </base-button>
+      <button class="mobile-menu__btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 </template>
 
@@ -25,18 +22,54 @@
 .header {
   background-color: $cBlack;
   height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 1080px;
+  }
+
+  &__title {
+    justify-content: center;
+
+    & > a {
+      text-decoration: none;
+      color: inherit;
+      & > span {
+        font-size: 28px;
+        color: $cWhite;
+      }
+    }
+  }
 }
 
-span {
-  background-color: $cBlack;
-  width: 35px;
-  height: 2px;
-  display: block;
-  margin-bottom: 9px;
-  transition: transform 0.7s;
+.mobile-menu__btn {
+  background-color: unset;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
 
-  &:last-child {
-    margin-bottom: 0;
+  & > span {
+    background-color: $cWhite;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 </style>
