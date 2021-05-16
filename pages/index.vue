@@ -1,5 +1,5 @@
 <template>
-  <layout-wrapper> myPage </layout-wrapper>
+  <layout-wrapper></layout-wrapper>
 </template>
 
 <script>

@@ -10,9 +10,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import './assets/css/modules/_variables.scss';
+
 .wrapper {
-  padding-top: 80px;
+  padding-top: 60px;
+  height: 100vh;
+  background-color: $cGreen;
   @media (min-width: 768px) {
     padding-top: 0;
   }

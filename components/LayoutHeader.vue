@@ -72,6 +72,7 @@ export default {
 
 .header {
   background-color: $cBlack;
+  opacity: 0.9;
   height: 60px;
   display: flex;
   justify-content: center;
