@@ -7,13 +7,13 @@
         </nuxt-link>
       </h1>
 
-      <button v-show="windowSize <= 601" class="mobile-menu__btn">
+      <button v-show="isMobile" class="mobile-menu__btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav v-show="windowSize" class="global-nav">
+      <nav v-show="!isMobile" class="global-nav">
         <ul class="menu">
           <template v-for="(link, index) in links">
             <li :key="index" class="menu__item">
@@ -65,6 +65,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    isMobile() {
+      return this.windowSize < 1200
+    },
   },
   mounted() {
     this.windowSize = window.innerWidth
