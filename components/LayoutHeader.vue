@@ -7,13 +7,13 @@
         </nuxt-link>
       </h1>
 
-      <button v-show="isMobile" class="mobile-menu__btn">
+      <button v-show="windowSize <= 1199" class="mobile-menu__btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav v-show="!isMobile" class="global-nav">
+      <nav v-show="1200 <= windowSize" class="global-nav">
         <ul class="menu">
           <template v-for="(link, index) in links">
             <li :key="index" class="menu__item">
@@ -35,7 +35,8 @@
 export default {
   data() {
     return {
-      windowSize: 375,
+      windowSize: 0,
+      isActiveMenu: false,
       // 変数にする必要あり？
       title: 'myPage',
       links: [
@@ -66,19 +67,14 @@ export default {
       ],
     }
   },
-  computed: {
-    isMobile() {
-      return this.windowSize < 1200
-    },
-  },
   mounted() {
     this.windowSize = window.innerWidth
     // cbを延期しDOMの更新後に行う
-    this.$nextTick(() => {
-      window.addEventListener('resize', function () {
-        this.windowSize = window.innerWidth
-      })
-    })
+    // this.$nextTick(() => {
+    //   window.addEventListener('resize', function () {
+    //     this.windowSize = window.innerWidth
+    //   })
+    // })
   },
 }
 </script>
