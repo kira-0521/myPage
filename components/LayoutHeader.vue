@@ -7,13 +7,13 @@
         </nuxt-link>
       </h1>
 
-      <button v-if="false" class="mobile-menu__btn">
+      <button v-show="windowSize <= 601" class="mobile-menu__btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="global-nav">
+      <nav v-show="windowSize" class="global-nav">
         <ul class="menu">
           <template v-for="(link, index) in links">
             <li :key="index" class="menu__item">
@@ -35,6 +35,8 @@
 export default {
   data() {
     return {
+      windowSize: 375,
+      // 変数にする必要あり？
       title: 'myPage',
       links: [
         {
@@ -63,6 +65,15 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.windowSize = window.innerWidth
+    // cbを延期しDOMの更新後に行う
+    this.$nextTick(() => {
+      window.addEventListener('resize', function () {
+        this.windowSize = window.innerWidth
+      })
+    })
   },
 }
 </script>
