@@ -23,7 +23,7 @@ export default {
 
 .layoutVisual {
   background-size: cover;
-  width: 100%;
+  max-width: $contentMaxWidth;
   height: 90vh;
   overflow: hidden;
   padding: 7vw;

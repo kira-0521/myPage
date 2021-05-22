@@ -101,7 +101,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    width: 1080px;
+    width: $contentMaxWidth;
     padding: 0 3%;
   }
 
