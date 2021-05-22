@@ -35,7 +35,7 @@
 export default {
   data() {
     return {
-      windowSize: 0,
+      windowSize: window.innerWidth,
       isActiveMenu: false,
       // 変数にする必要あり？
       title: 'myPage',
@@ -68,13 +68,15 @@ export default {
     }
   },
   mounted() {
-    this.windowSize = window.innerWidth
-    // cbを延期しDOMの更新後に行う
-    // this.$nextTick(() => {
-    //   window.addEventListener('resize', function () {
-    //     this.windowSize = window.innerWidth
-    //   })
-    // })
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.windowSize = window.innerWidth
+    },
   },
 }
 </script>
