@@ -1,6 +1,9 @@
 <template>
   <section class="layoutVisual">
-    <h1 class="layoutVisual__title">{{ tagline }}</h1>
+    <div class="layoutVisual_textarea">
+      <h1 class="layoutVisual__title">{{ tagline }}</h1>
+      <p class="layoutVisual__text">{{ text }}</p>
+    </div>
   </section>
 </template>
 
@@ -8,7 +11,8 @@
 export default {
   data() {
     return {
-      tagline: 'myPage',
+      tagline: 'Welcome to myPage.',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.f',
     }
   },
 }
@@ -18,21 +22,30 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .layoutVisual {
+  background-size: cover;
   width: 100%;
   height: 90vh;
   overflow: hidden;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
   padding: 7vw;
-  background: url('/main-cover.jpg') no-repeat center center scroll; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: brightness(50%);
+  position: relative;
+
+  &__textare {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    display: inline-block;
+    max-width: 800px;
+    padding: 5% 3%;
+  }
 
   &__title {
     font-size: 38px;
-    color: $cWhite;
+    color: $cBlack;
+  }
+
+  &__text {
+    display: inline-block;
+    word-break: break-all;
   }
 }
 </style>
