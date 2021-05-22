@@ -27,13 +27,8 @@ export default {
   height: 90vh;
   overflow: hidden;
   padding: 7vw;
-  position: relative;
 
   &__textare {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    display: inline-block;
     max-width: 800px;
     padding: 5% 3%;
   }
