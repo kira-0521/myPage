@@ -1,6 +1,6 @@
 <template>
   <section class="layoutVisual">
-    <h1>{{ tagline }}</h1>
+    <h1 class="layoutVisual__title">{{ tagline }}</h1>
   </section>
 </template>
 
@@ -15,6 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import './assets/css/modules/_variables.scss';
+
 .layoutVisual {
   width: 100%;
   height: 90vh;
@@ -23,22 +25,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-radial-gradient(
-      center,
-      ellipse cover,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0) 37%,
-      rgba(0, 0, 0, 0.65) 100%
-    ),
-    url('/main-cover.jpg') no-repeat center center scroll; /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0) 37%,
-      rgba(0, 0, 0, 0.65) 100%
-    ),
-    url('/main-cover.jpg') no-repeat center center scroll; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background-size: cover;
-  color: #333;
+  padding: 7vw;
+  background: url('/main-cover.jpg') no-repeat center center scroll; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: brightness(50%);
+
+  &__title {
+    font-size: 38px;
+    color: $cWhite;
+  }
 }
 </style>
