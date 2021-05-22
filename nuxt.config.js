@@ -43,7 +43,10 @@ export default {
   ],
   // 画像最適化
   optimizedImages: {
+    // 本番環境
     optimizeImages: true,
+    // 開発環境
+    optimizeImagesInDev: true,
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
