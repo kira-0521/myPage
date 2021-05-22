@@ -84,7 +84,7 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .header {
-  background-color: $cBlack;
+  background-color: $cWhite;
   opacity: 0.9;
   height: 60px;
   display: flex;
@@ -102,6 +102,7 @@ export default {
     align-items: center;
     margin: 0 auto;
     width: 1080px;
+    padding: 0 3%;
   }
 
   &__title {
@@ -110,7 +111,7 @@ export default {
     & > a {
       & > span {
         font-size: 26px;
-        color: $cWhite;
+        color: $cBlack;
       }
     }
   }
@@ -123,7 +124,7 @@ export default {
   cursor: pointer;
 
   & > span {
-    background-color: $cWhite;
+    background-color: $cBlack;
     width: 35px;
     height: 2px;
     display: block;
@@ -145,7 +146,7 @@ export default {
     margin-left: 20px;
 
     & > a {
-      color: $cWhite;
+      color: $cBlack;
     }
   }
 }
