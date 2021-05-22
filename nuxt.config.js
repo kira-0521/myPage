@@ -38,6 +38,9 @@ export default {
     '@nuxtjs/eslint-module',
     // クライアントサイドとサーバーサイドで共有される環境変数
     '@nuxtjs/dotenv',
+  ],
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
     // 画像最適化
     '@aceforth/nuxt-optimized-images',
   ],
@@ -48,9 +51,6 @@ export default {
     // 開発環境
     optimizeImagesInDev: true,
   },
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
