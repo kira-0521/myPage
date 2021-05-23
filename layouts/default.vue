@@ -2,7 +2,7 @@
   <div>
     <!-- SSR無効 -->
     <no-ssr>
-      <layout-header />
+      <layout-header :is-active="isActive" @mobile-active="clickChange" />
     </no-ssr>
     <Nuxt />
     <!-- <layout-footer /> -->
@@ -10,6 +10,21 @@
     <div class="mobile-menu__cover"></div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    clickChange() {
+      this.isActive = !this.isActive
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 @import './assets/css/modules/_variables.scss';

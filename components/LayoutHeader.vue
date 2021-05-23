@@ -7,7 +7,12 @@
         </nuxt-link>
       </h1>
 
-      <button v-show="windowSize <= 1199" class="mobile-menu__btn">
+      <button
+        v-show="windowSize <= 1199"
+        class="mobile-menu__btn"
+        :class="{ active: isActive }"
+        @click="buttonClick"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -33,6 +38,7 @@
 
 <script>
 export default {
+  props: { isActive: Boolean },
   data() {
     return {
       windowSize: window.innerWidth,
@@ -75,6 +81,9 @@ export default {
   methods: {
     handleResize() {
       this.windowSize = window.innerWidth
+    },
+    buttonClick() {
+      this.$emit('mobile-active')
     },
   },
 }
@@ -129,10 +138,27 @@ export default {
     height: 2px;
     display: block;
     margin-bottom: 9px;
-    transition: transform 0.7s;
+    transition: transform 0.4s;
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+.active {
+  & > span {
+    &:nth-child(1) {
+      transition-delay: 70ms;
+      transform: translateY(11px) rotate(135deg);
+    }
+    &:nth-child(2) {
+      transition-delay: 0s;
+      transform: translateX(-18px) scaleX(0);
+    }
+    &:nth-child(3) {
+      transition-delay: 140ms;
+      transform: translateY(-11px) rotate(-135deg);
     }
   }
 }
