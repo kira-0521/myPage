@@ -7,11 +7,7 @@
     <Nuxt />
     <!-- <layout-footer /> -->
     <mobile-menu :is-active="isActive" />
-    <div
-      class="mobile-menu__cover"
-      :class="{ active: isActive }"
-      @click="clickChange"
-    ></div>
+    <div v-if="isActive" class="mobile-menu__cover" @click="clickChange"></div>
   </div>
 </template>
 
@@ -44,15 +40,8 @@ body {
   background-color: $cBlack;
   position: fixed;
   top: 0;
-  z-index: -100;
-  visibility: hidden;
   overflow: hidden;
-  opacity: 0;
-
-  &.active {
-    z-index: 50;
-    opacity: 0.7;
-    visibility: visible;
-  }
+  z-index: 50;
+  opacity: 0.7;
 }
 </style>
