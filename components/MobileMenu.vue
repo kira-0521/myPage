@@ -1,22 +1,20 @@
 <template>
-  <div class="mobile-menu">
-    <nav class="mobile-menu__nav">
-      <ul class="mobile-menu__ul">
-        <li class="mobile-menu__li">
-          <nuxt-link to="/">Home</nuxt-link>
-        </li>
-        <li class="mobile-menu__li">
-          <nuxt-link to="/profile">Profile</nuxt-link>
-        </li>
-        <li class="mobile-menu__li">
-          <nuxt-link to="/blog">Blog</nuxt-link>
-        </li>
-        <li class="mobile-menu__li">
-          <nuxt-link to="/activitys">Activitys</nuxt-link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="mobile-menu">
+    <ul class="mobile-menu__ul">
+      <li class="mobile-menu__li">
+        <nuxt-link to="/">Home</nuxt-link>
+      </li>
+      <li class="mobile-menu__li">
+        <nuxt-link to="/profile">Profile</nuxt-link>
+      </li>
+      <li class="mobile-menu__li">
+        <nuxt-link to="/blog">Blog</nuxt-link>
+      </li>
+      <li class="mobile-menu__li">
+        <nuxt-link to="/activitys">Activitys</nuxt-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -30,12 +28,12 @@ export default {}
   height: 100vh;
   width: 256px;
   background-color: $cWhite;
-  transform: translateY(-100%);
+  transform: translateX(100%);
+  position: fixed;
   top: 0;
-
-  &__nav {
-    padding: 8px 0;
-  }
+  right: 0;
+  z-index: 100;
+  padding: 8px 0;
 
   &__ul {
     display: flex;
@@ -45,6 +43,7 @@ export default {}
 
   &__li {
     padding: 0 16px;
+    margin: 16px 0;
   }
 }
 </style>
