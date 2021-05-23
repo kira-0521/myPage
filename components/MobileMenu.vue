@@ -1,5 +1,5 @@
 <template>
-  <nav class="mobile-menu">
+  <nav class="mobile-menu" :class="{ active: isActive }">
     <ul class="mobile-menu__ul">
       <li class="mobile-menu__li">
         <nuxt-link to="/">Home</nuxt-link>
@@ -18,7 +18,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    isActive: Boolean,
+  },
+}
 </script>
 
 <style scoped lang="scss">
@@ -45,5 +49,9 @@ export default {}
     padding: 0 16px;
     margin: 16px 0;
   }
+}
+
+.active {
+  transform: translateX(0);
 }
 </style>
