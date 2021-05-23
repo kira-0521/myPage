@@ -30,7 +30,7 @@ export default {
 
   &__inner {
     max-width: $contentMaxWidth;
-    margin: 0 auto;
+    margin: 0 auto !important;
     display: grid;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: repeat(2, 1fr);
