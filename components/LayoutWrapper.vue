@@ -15,7 +15,7 @@ export default {
 
 .wrapper {
   padding-top: 60px !important;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(
     90deg,
     rgba(244, 249, 244, 1) 20.25%,

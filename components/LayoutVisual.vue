@@ -4,7 +4,7 @@
       <h1 class="layoutVisual__title">{{ tagline }}</h1>
       <p class="layoutVisual__text">{{ text }}</p>
     </div>
-    <span class="arrow">scroll</span>
+    <!-- <span class="arrow">scroll</span> -->
   </section>
 </template>
 
@@ -23,10 +23,10 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .layoutVisual {
-  height: 90vh;
   width: 100%;
   overflow: hidden;
   margin: 0;
+  min-height: 100vh;
 
   &__inner {
     max-width: $contentMaxWidth;
@@ -35,6 +35,7 @@ export default {
     grid-template-rows: 1fr 2fr;
     grid-template-columns: repeat(2, 1fr);
     padding: 3%;
+    margin: 30px 0;
   }
 
   &__title {
@@ -57,7 +58,7 @@ export default {
 .arrow {
   display: inline-block;
   position: absolute;
-  top: 55%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 2;
@@ -81,5 +82,9 @@ export default {
     height: 95px;
     background-color: $cBlack;
   }
+}
+.empty {
+  height: 100vh;
+  background-color: $cWhite;
 }
 </style>
