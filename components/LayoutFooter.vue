@@ -14,6 +14,8 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .footer {
+  position: absolute;
+  bottom: 0;
   background-color: $cBlack;
   display: flex;
   justify-content: center;

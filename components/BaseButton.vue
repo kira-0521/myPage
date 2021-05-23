@@ -2,7 +2,7 @@
   <button
     class="el_btn"
     :style="{
-      color: fore_color,
+      color: foreColor,
       'background-color': bg,
       padding: `${paddingHeight}em ${paddingWidth}em`,
       'border-radius': `${weapon}px`,
@@ -17,7 +17,7 @@
 export default {
   name: 'BaseButton',
   props: {
-    fore_color: {
+    foreColor: {
       type: String,
       default: '#f4f9f4',
     },
