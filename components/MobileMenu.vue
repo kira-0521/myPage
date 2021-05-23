@@ -1,26 +1,11 @@
 <template>
-  <transition name="slide">
-    <nav class="mobile-menu" :class="{ active: isActive }">
-      <ul class="mobile-menu__ul">
-        <li
-          v-for="(route, index) in links"
-          :key="index"
-          class="mobile-menu__li"
-        >
-          <nuxt-link to="`/${route.link}`">{{ route.name }}</nuxt-link>
-        </li>
-        <!-- <li class="mobile-menu__li">
-          <nuxt-link to="/profile">Profile</nuxt-link>
-        </li>
-        <li class="mobile-menu__li">
-          <nuxt-link to="/blog">Blog</nuxt-link>
-        </li>
-        <li class="mobile-menu__li">
-          <nuxt-link to="/activitys">Activitys</nuxt-link>
-        </li> -->
-      </ul>
-    </nav>
-  </transition>
+  <nav class="mobile-menu" :class="{ active: isActive }">
+    <ul class="mobile-menu__ul">
+      <li v-for="(route, index) in links" :key="index" class="mobile-menu__li">
+        <nuxt-link to="`/${route.link}`">{{ route.name }}</nuxt-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -82,16 +67,4 @@ export default {
 .active {
   transform: translateX(0);
 }
-
-// .slide-enter {
-//   opacity: 0;
-// }
-// .slide-enter-active {
-//   transition: all 0.3s ease;
-//   opacity: 0.5;
-// }
-// .slide-enter-to {
-//   transition: all 0.3s ease;
-//   opacity: 1;
-// }
 </style>
