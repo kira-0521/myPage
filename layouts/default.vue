@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- SSR無効 -->
-    <no-ssr>
+    <client-only>
       <layout-header :is-active="isActive" @mobile-active="clickChange" />
-    </no-ssr>
+    </client-only>
     <Nuxt />
     <!-- <layout-footer /> -->
     <mobile-menu :is-active="isActive" />
