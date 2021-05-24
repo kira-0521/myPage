@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -54,4 +56,21 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  generate: {
+    // SSGの時どんなパスでどんなファイルを生成するか
+    async routes() {
+      const pages = await axios
+        .get('https://mypage.microcms.io/api/v1/blog', {
+          headers: { 'X-API-KEY': 'aebf3989-317c-41bd-ba6a-e969b4612cd2' },
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content,
+          }))
+        )
+      return pages
+    },
+  },
 }
