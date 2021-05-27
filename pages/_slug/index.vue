@@ -4,6 +4,7 @@
       <h1 class="id">{{ id }}</h1>
       <h1 class="title">{{ title }}</h1>
       <p class="publishedAt">{{ publishedAt }}</p>
+      <p class="category">{{ category && category.name }}</p>
       <!-- v-htmlを用いることで入ってきたbodyをDOMとして扱うことができる -->
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="post" v-html="body"></div>
