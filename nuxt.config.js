@@ -73,4 +73,13 @@ export default {
       return pages
     },
   },
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/page/:p',
+        component: resolve(__dirname, 'pages/index.vue'),
+        name: 'page',
+      })
+    },
+  },
 }
