@@ -60,14 +60,17 @@ export default {
   generate: {
     // SSGの時どんなパスでどんなファイルを生成するか
     async routes() {
+      const limit = 10
+      const range = (start, end) =>
+        [...Array(end - start + 1)].map((_, i) => start + i)
+
       const pages = await axios
-        .get('https://mypage.microcms.io/api/v1/blog', {
+        .get('https://mypage.microcms.io/api/v1/blog?limit=0', {
           headers: { 'X-API-KEY': 'aebf3989-317c-41bd-ba6a-e969b4612cd2' },
         })
         .then((res) =>
-          res.data.contents.map((content) => ({
-            route: `/${content.id}`,
-            payload: content,
+          range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
+            route: `/page/${p}`,
           }))
         )
       return pages
@@ -80,6 +83,7 @@ export default {
         component: resolve(__dirname, 'pages/index.vue'),
         name: 'page',
       })
+      console.log(__dirname)
     },
   },
 }
