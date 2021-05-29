@@ -14,10 +14,17 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData() {
-    const { data } = await axios.get('https://mypage.microcms.io/api/v1/blog', {
-      headers: { 'X-API-KEY': 'aebf3989-317c-41bd-ba6a-e969b4612cd2' },
-    })
+  async asyncData({ params }) {
+    const page = params.p || '1'
+    const limit = 10
+    const { data } = await axios.get(
+      `https://mypage.microcms.io/api/v1/blog?limit=${limit}&offset=${
+        (page - 1) * limit
+      }`,
+      {
+        headers: { 'X-API-KEY': 'aebf3989-317c-41bd-ba6a-e969b4612cd2' },
+      }
+    )
     return data
   },
 }
