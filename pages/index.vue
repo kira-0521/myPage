@@ -27,5 +27,8 @@ export default {
     )
     return data
   },
+  mounted() {
+    console.log(process.env.base_Url)
+  },
 }
 </script>
