@@ -1,10 +1,15 @@
 <template>
   <layout-wrapper>
-    <ul>
-      <li v-for="(article, index) in articleList" :key="index">
-        {{ article }}
-      </li>
-    </ul>
+    <section class="activitys">
+      <article v-for="(article, i) in articleList" :key="i">
+        <img
+          :src="article.user.profile_image_url"
+          alt=""
+          style="width: 100px; height: 100px"
+        />
+        <a :href="article.url">{{ article.title }}</a>
+      </article>
+    </section>
   </layout-wrapper>
 </template>
 
@@ -23,14 +28,20 @@ export default {
         articleList: res.data,
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   },
   mounted() {
     axios
-      .get(`${process.env.qiita_Url}items`)
+      .get(`${process.env.qiita_Url}items`, {
+        params: {
+          page: 1,
+          per_page: 3,
+        },
+      })
       // eslint-disable-next-line no-console
-      .then((res) => console.log(res))
+      .then((res) => console.log(res.data))
   },
 }
 </script>
