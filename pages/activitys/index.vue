@@ -6,7 +6,12 @@
         alt=""
         style="width: 50px; height: 50px; border-radius: 5px"
       />
-      <a :href="article.url">{{ article.title }}</a>
+      <strong
+        ><a :href="article.url">{{ article.title }}</a></strong
+      >
+      <br />
+      {{ article.user.id }}
+      <small>Like: {{ article.likes_count }}</small>
     </article>
   </layout-wrapper>
 </template>
