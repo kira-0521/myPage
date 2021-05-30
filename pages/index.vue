@@ -18,7 +18,7 @@ export default {
     const page = params.p || '1'
     const limit = 10
     const { data } = await axios.get(
-      `https://mypage.microcms.io/api/v1/blog?limit=${limit}&offset=${
+      `${process.env.microCMS_Url}blog?limit=${limit}&offset=${
         (page - 1) * limit
       }`,
       {
@@ -28,7 +28,16 @@ export default {
     return data
   },
   mounted() {
-    console.log(process.env.base_Url)
+    // eslint-disable-next-line no-console
+    axios
+      .get(`${process.env.qiita_Url}items`, {
+        params: {
+          page: 1,
+          per_page: 10,
+        },
+        // eslint-disable-next-line no-console
+      })
+      .then((res) => console.log(res.data))
   },
 }
 </script>
