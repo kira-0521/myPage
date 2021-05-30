@@ -1,14 +1,18 @@
 <template>
   <layout-wrapper>
-    <main class="main">
-      <h1 class="id">{{ id }}</h1>
-      <h1 class="title">{{ title }}</h1>
-      <p class="publishedAt">{{ publishedAt }}</p>
-      <p class="category">{{ category && category.name }}</p>
+    <article class="article">
+      <aside class="article__aside">
+        <h1 class="id">{{ id }}</h1>
+        <h1 class="title">{{ title }}</h1>
+        <p class="publishedAt">{{ publishedAt }}</p>
+        <p class="category">{{ category && category.name }}</p>
+      </aside>
       <!-- v-htmlを用いることで入ってきたbodyをDOMとして扱うことができる -->
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="post" v-html="body"></div>
-    </main>
+      <section class="article__main">
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div class="post" v-html="body"></div>
+      </section>
+    </article>
   </layout-wrapper>
 </template>
 
