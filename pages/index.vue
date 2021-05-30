@@ -35,8 +35,8 @@ export default {
           page: 1,
           per_page: 10,
         },
-        // eslint-disable-next-line no-console
       })
+      // eslint-disable-next-line no-console
       .then((res) => console.log(res.data))
   },
 }

@@ -1,15 +1,13 @@
 <template>
   <layout-wrapper>
-    <section class="activitys">
-      <article v-for="(article, i) in articleList" :key="i">
-        <img
-          :src="article.user.profile_image_url"
-          alt=""
-          style="width: 100px; height: 100px"
-        />
-        <a :href="article.url">{{ article.title }}</a>
-      </article>
-    </section>
+    <article v-for="(article, i) in articleList" :key="i">
+      <img
+        :src="article.user.profile_image_url"
+        alt=""
+        style="width: 50px; height: 50px; border-radius: 5px"
+      />
+      <a :href="article.url">{{ article.title }}</a>
+    </article>
   </layout-wrapper>
 </template>
 
