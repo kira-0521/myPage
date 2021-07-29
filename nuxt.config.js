@@ -83,7 +83,6 @@ export default {
         component: resolve(__dirname, 'pages/index.vue'),
         name: 'page',
       })
-      console.log(__dirname)
     },
   },
 }
