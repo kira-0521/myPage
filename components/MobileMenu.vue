@@ -28,10 +28,6 @@ export default {
           name: 'Blog',
           link: 'blog',
         },
-        {
-          name: 'Activitys',
-          link: 'activitys',
-        },
       ],
     }
   },

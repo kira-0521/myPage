@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -56,33 +54,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  generate: {
-    // SSGの時どんなパスでどんなファイルを生成するか
-    async routes() {
-      const limit = 10
-      const range = (start, end) =>
-        [...Array(end - start + 1)].map((_, i) => start + i)
-
-      const pages = await axios
-        .get('https://mypage.microcms.io/api/v1/blog?limit=0', {
-          headers: { 'X-API-KEY': 'aebf3989-317c-41bd-ba6a-e969b4612cd2' },
-        })
-        .then((res) =>
-          range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
-            route: `/page/${p}`,
-          }))
-        )
-      return pages
-    },
-  },
-  router: {
-    extendRoutes(routes, resolve) {
-      routes.push({
-        path: '/page/:p',
-        component: resolve(__dirname, 'pages/index.vue'),
-        name: 'page',
-      })
-    },
-  },
 }

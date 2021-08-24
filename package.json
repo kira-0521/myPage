@@ -16,9 +16,7 @@
     "core-js": "^3.9.1",
     "fibers": "^5.0.0",
     "modern-css-reset": "^1.4.0",
-    "node-sass": "5.0.0",
-    "nuxt": "^2.15.3",
-    "sass-loader": "10.1.1"
+    "nuxt": "^2.15.3"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.4.0",
@@ -32,16 +30,18 @@
     "eslint-plugin-vue": "^7.7.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
-    "prettier": "^2.2.1"
+    "node-sass": "4.14.1",
+    "prettier": "^2.2.1",
+    "sass-loader": "10.2.0"
   },
   "rules": {
-        "no-console": "off",
-        "no-restricted-syntax": [
-            "error",
-            {
-                "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
-                "message": "Unexpected property on console object was called"
-            }
-        ]
-    }
+    "no-console": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+        "message": "Unexpected property on console object was called"
+      }
+    ]
+  }
 }
