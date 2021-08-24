@@ -1,12 +1,6 @@
 <template>
   <header class="header">
     <div class="header__inner">
-      <h1 class="header__title">
-        <nuxt-link to="/">
-          <span>{{ title }}</span>
-        </nuxt-link>
-      </h1>
-
       <button
         v-show="windowSize <= 1199"
         class="mobile-menu__btn"
@@ -18,10 +12,10 @@
         <span></span>
       </button>
 
-      <nav v-show="1200 <= windowSize" class="global-nav">
-        <ul class="menu">
-          <template v-for="(link, index) in links">
-            <li :key="index" class="menu__item">
+      <nav v-show="1200 <= windowSize" class="header__nav">
+        <ul class="header__ul">
+          <template v-for="link in links">
+            <li :key="link.id" class="header__li">
               <nuxt-link
                 class="header__link"
                 :to="`/${link.path}`"
@@ -42,32 +36,30 @@ export default {
   data() {
     return {
       windowSize: window.innerWidth,
-      // 変数にする必要あり？
-      title: 'myPage',
       links: [
         {
           id: 1,
           path: '',
           name: 'Home',
-          className: '',
+          className: 'home',
         },
         {
           id: 2,
-          path: 'profile',
-          name: 'Profile',
-          className: '',
+          path: 'about',
+          name: 'About',
+          className: 'about',
         },
         {
           id: 3,
-          path: 'blog',
-          name: 'Blog',
-          className: '',
+          path: 'contact',
+          name: 'Contact',
+          className: 'contact',
         },
         {
           id: 4,
-          path: 'activitys',
-          name: 'Activitys',
-          className: '',
+          path: 'works',
+          name: 'Works',
+          className: 'works',
         },
       ],
     }
@@ -95,7 +87,7 @@ export default {
 .header {
   background-color: $cWhite;
   opacity: 0.9;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,23 +98,27 @@ export default {
   width: 100%;
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 0 auto;
     width: $contentMaxWidth;
     padding: 0 3%;
   }
 
-  &__title {
-    justify-content: center;
+  &__ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+  }
 
-    & > a {
-      & > span {
-        font-size: 26px;
-        color: $cBlack;
-      }
-    }
+  &__li {
+    margin-left: 20px;
+  }
+
+  &__link {
+    color: $cBlack;
+    font-size: 18px;
+    font-weight: 700;
   }
 }
 
@@ -159,20 +155,6 @@ export default {
     &:nth-child(3) {
       transition-delay: 140ms;
       transform: translateY(-11px) rotate(-135deg);
-    }
-  }
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  &__item {
-    margin-left: 20px;
-
-    & > a {
-      color: $cBlack;
     }
   }
 }
