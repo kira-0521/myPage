@@ -14,7 +14,9 @@
           <BaseButton></BaseButton>
         </div>
       </div>
-      <div class="about__img"></div>
+      <div class="about__img">
+        <img :src="img.me" width="100%" height="100%" alt="" />
+      </div>
     </div>
   </layout-wrapper>
 </template>
@@ -29,6 +31,9 @@ export default {
         subtitle: '私について',
       },
       description: '田中輝良 / Kira Tanaka長崎県平戸市出身Web制作',
+      img: {
+        me: '@/assets/images/me.JPG',
+      },
     }
   },
 }

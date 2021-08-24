@@ -16,5 +16,10 @@ export default {
 .wrapper {
   min-height: 100vh;
   background-color: $cWhite;
+  padding-top: 80px !important;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
 }
 </style>

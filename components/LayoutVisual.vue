@@ -37,11 +37,6 @@ export default {
   overflow: hidden;
   margin: 0;
   min-height: 100vh;
-  padding-top: 80px !important;
-
-  @media (min-width: 768px) {
-    padding-top: 0;
-  }
 
   &__inner {
     max-width: $contentMaxWidth;
