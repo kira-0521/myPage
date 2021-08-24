@@ -14,14 +14,9 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .wrapper {
-  padding-top: 60px !important;
+  padding-top: 80px !important;
   min-height: 100vh;
-  background: linear-gradient(
-    90deg,
-    rgba(244, 249, 244, 1) 20.25%,
-    rgba(244, 248, 244, 1) 20.25%,
-    rgba(244, 247, 249, 1) 80.25%
-  );
+  background-color: $cWhite;
 
   @media (min-width: 768px) {
     padding-top: 0;
