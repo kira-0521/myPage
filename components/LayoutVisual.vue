@@ -4,7 +4,10 @@
       <div class="align-left">
         <h1 class="layoutVisual__title">{{ tagline }}</h1>
         <p class="layoutVisual__text">{{ text }}</p>
-        <BaseButton :link="btn.link" :fore-color="btn.color" :mt="btn.mt"
+        <BaseButton
+          :link="btnStyle.link"
+          :color="btnStyle.color"
+          :mt="btnStyle.mt"
           >Contact →</BaseButton
         >
       </div>
@@ -19,10 +22,11 @@ export default {
     return {
       tagline: 'Kira Tanaka',
       text: 'WEBエンジニア',
-      btn: {
+      btnStyle: {
         link: 'contact',
         color: '#fff',
         mt: 40,
+        bg: '#25c49f',
       },
     }
   },
