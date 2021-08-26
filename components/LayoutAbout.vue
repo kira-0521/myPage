@@ -1,23 +1,36 @@
 <template>
   <layout-wrapper>
-    <div class="about">
-      <div class="about__text">
-        <div class="title">
-          <h2 class="about__title">{{ section.title }}</h2>
-          <p class="about__subtitle">{{ section.subtitle }}</p>
+    <section class="about">
+      <div class="about__inner">
+        <div class="about__texts">
+          <PagesTitle
+            :title="title"
+            :subtitle="subtitle"
+            :direction="titleStyle.align"
+          ></PagesTitle>
+          <div class="about__description">
+            <p class="about__text">{{ me.name }}</p>
+            <p class="about__text">{{ me.from }}</p>
+            <p class="about__text">{{ me.job }}</p>
+            <p class="about__text">{{ me.skills }}</p>
+          </div>
+          <div class="link">
+            <span class="link__blog">Blog</span>
+            <BaseButton
+              :link="btnStyle.link"
+              :color="btnStyle.color"
+              :mt="btnStyle.mt"
+              :padding-height="btnStyle.paddingHeight"
+              :padding-width="btnStyle.paddingWidth"
+              >→</BaseButton
+            >
+          </div>
         </div>
-        <div class="description">
-          <p class="about__description">{{ description }}</p>
-        </div>
-        <div class="link">
-          Blog
-          <BaseButton></BaseButton>
+        <div class="about__img">
+          <img :src="img" alt="" />
         </div>
       </div>
-      <div class="about__img">
-        <img :src="img.me" width="100%" height="100%" alt="" />
-      </div>
-    </div>
+    </section>
   </layout-wrapper>
 </template>
 
@@ -26,15 +39,64 @@ export default {
   nama: 'layout-about',
   data() {
     return {
-      section: {
-        title: 'About',
-        subtitle: '私について',
+      title: 'About',
+      subtitle: '私について',
+      img: require('~/assets/images/me.jpg'),
+      me: {
+        name: '田中輝良 / Kira Tanaka',
+        from: '長崎県平戸市出身Web制作',
+        job: 'Web制作 / Webフロントエンド開発',
+        skills: 'HTML, CSS(SASS), JavaScript, Vue.js, Nuxt.js',
       },
-      description: '田中輝良 / Kira Tanaka長崎県平戸市出身Web制作',
-      img: {
-        me: '@/assets/images/me.JPG',
+      titleStyle: {
+        align: 'left',
+      },
+      btnStyle: {
+        link: 'blog',
+        color: '#fff',
+        mt: 0,
+        paddingHeight: 0.5,
+        paddingWidth: 0.6,
       },
     }
   },
 }
 </script>
+
+<style scoped lang="scss">
+@import './assets/css/modules/_variables.scss';
+
+.about {
+  &__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 17px;
+    color: $cBlack;
+  }
+
+  &__text {
+    margin-top: 5px;
+    color: $cBlack;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.link {
+  text-align: right;
+  margin-top: 30px;
+
+  &__blog {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+</style>
