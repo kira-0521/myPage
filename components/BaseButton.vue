@@ -3,7 +3,7 @@
     :to="`/${link}`"
     class="el_btn"
     :style="{
-      color: foreColor,
+      color: color,
       'background-color': bg,
       padding: `${paddingHeight}em ${paddingWidth}em`,
       'border-radius': `${weapon}px`,
@@ -24,7 +24,7 @@ export default {
       type: String,
       default: '',
     },
-    foreColor: {
+    color: {
       type: String,
       default: '#f4f9f4',
     },
