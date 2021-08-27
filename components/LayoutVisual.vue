@@ -44,8 +44,9 @@ export default {
 
   &__inner {
     max-width: $contentMaxWidth;
-    margin: 30px auto 0 !important;
+    margin: 0 auto !important;
     text-align: right;
+    padding-top: 180px;
   }
 
   &__title {
