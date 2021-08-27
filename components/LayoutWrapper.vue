@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="routePaddingChange">
     <slot />
   </div>
 </template>
@@ -7,6 +7,17 @@
 <script>
 export default {
   name: 'LayoutWrapper',
+  computed: {
+    routePaddingChange() {
+      if (this.$route.path === '/') {
+        // eslint-disable-next-line no-console
+        console.log(this.$route.path)
+        return 'not-padding'
+      } else {
+        return 'padding-top'
+      }
+    },
+  },
 }
 </script>
 
@@ -16,6 +27,9 @@ export default {
 .wrapper {
   min-height: 100vh;
   background-color: $cWhite;
+}
+
+.padding-top {
   padding-top: 80px !important;
 
   @media (min-width: 768px) {
