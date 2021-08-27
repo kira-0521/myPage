@@ -1,9 +1,18 @@
 <template>
-  <layout-wrapper> </layout-wrapper>
+  <layout-wrapper>
+    <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
+  </layout-wrapper>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      title: 'Works',
+      subtitle: '活動実績',
+    }
+  },
+}
 </script>
 
 <style></style>
