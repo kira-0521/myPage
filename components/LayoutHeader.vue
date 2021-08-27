@@ -32,36 +32,16 @@
 
 <script>
 export default {
-  props: { isActive: Boolean },
+  props: {
+    isActive: Boolean,
+    links: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       windowSize: window.innerWidth,
-      links: [
-        {
-          id: 1,
-          path: '',
-          name: 'Home',
-          className: 'home',
-        },
-        {
-          id: 2,
-          path: 'about',
-          name: 'About',
-          className: 'about',
-        },
-        {
-          id: 3,
-          path: 'contact',
-          name: 'Contact',
-          className: 'contact',
-        },
-        {
-          id: 4,
-          path: 'works',
-          name: 'Works',
-          className: 'works',
-        },
-      ],
     }
   },
   mounted() {
