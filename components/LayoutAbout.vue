@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="about__img">
-          <img :src="img" alt="" />
+          <img :src="img" alt="" loading="lazy" />
         </div>
       </div>
     </section>
@@ -41,7 +41,7 @@ export default {
     return {
       title: 'About',
       subtitle: '私について',
-      img: require('~/assets/images/me.jpg'),
+      img: '/images/me.jpg',
       me: {
         name: '田中輝良 / Kira Tanaka',
         from: '長崎県平戸市出身Web制作',
