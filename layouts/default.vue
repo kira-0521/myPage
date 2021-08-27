@@ -2,7 +2,11 @@
   <div>
     <!-- SSR無効 -->
     <client-only>
-      <layout-header :is-active="isActive" @mobile-active="clickChange" />
+      <layout-header
+        :is-active="isActive"
+        :links="links"
+        @mobile-active="clickChange"
+      />
     </client-only>
     <Nuxt />
     <!-- <layout-footer /> -->
@@ -16,6 +20,32 @@ export default {
   data() {
     return {
       isActive: false,
+      links: [
+        {
+          id: 1,
+          path: '',
+          name: 'Home',
+          className: 'home',
+        },
+        {
+          id: 2,
+          path: 'about',
+          name: 'About',
+          className: 'about',
+        },
+        {
+          id: 3,
+          path: 'works',
+          name: 'Works',
+          className: 'works',
+        },
+        {
+          id: 4,
+          path: 'contact',
+          name: 'Contact',
+          className: 'contact',
+        },
+      ],
     }
   },
   methods: {
