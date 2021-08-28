@@ -27,7 +27,12 @@
           </div>
         </div>
         <div class="about__img">
-          <img :src="img" alt="" loading="lazy" />
+          <nuxt-img
+            :src="img"
+            quality="80"
+            class="inline-block"
+            preset="avatar"
+          />
         </div>
       </div>
     </section>
@@ -72,6 +77,12 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__description {
@@ -86,6 +97,12 @@ export default {
 
     &:first-child {
       margin-top: 0;
+    }
+  }
+
+  &__img {
+    @media screen and (max-width: 769px) {
+      margin-top: 30px;
     }
   }
 }
