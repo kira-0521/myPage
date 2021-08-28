@@ -1,6 +1,10 @@
 <template>
   <layout-wrapper>
-    <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
+    <section class="works">
+      <div class="inner works__inner">
+        <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
+      </div>
+    </section>
   </layout-wrapper>
 </template>
 
@@ -15,4 +19,4 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

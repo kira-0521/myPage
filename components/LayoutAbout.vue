@@ -1,7 +1,7 @@
 <template>
   <layout-wrapper>
     <section class="about">
-      <div class="about__inner">
+      <div class="inner about__inner">
         <div class="about__texts">
           <PagesTitle
             :title="title"
@@ -73,8 +73,6 @@ export default {
 
 .about {
   &__inner {
-    max-width: 1080px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-around;
 

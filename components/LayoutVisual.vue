@@ -43,8 +43,6 @@ export default {
   min-height: 100vh;
 
   &__inner {
-    max-width: $contentMaxWidth;
-    margin: 0 auto !important;
     text-align: right;
     padding-top: 180px;
   }
