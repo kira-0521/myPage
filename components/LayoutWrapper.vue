@@ -30,7 +30,7 @@ export default {
 }
 
 .padding-top {
-  padding-top: 80px !important;
+  padding-top: 60px !important;
 
   @media (min-width: 768px) {
     padding-top: 0;
