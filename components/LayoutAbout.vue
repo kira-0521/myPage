@@ -75,6 +75,7 @@ export default {
   &__inner {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
 
     @media screen and (max-width: 769px) {
       flex-direction: column;
