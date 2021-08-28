@@ -52,6 +52,8 @@ export default {
     '@nuxtjs/eslint-module',
     // クライアントサイドとサーバーサイドで共有される環境変数
     '@nuxtjs/dotenv',
+    // 画像最適化
+    '@nuxt/image',
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -65,7 +67,27 @@ export default {
     // 開発環境
     optimizeImagesInDev: true,
   },
-
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 480,
+          height: 430,
+        },
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
