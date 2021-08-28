@@ -9,7 +9,6 @@
               <nuxt-img
                 :src="work.img"
                 quality="100"
-                class="inline-block"
                 preset="avatar"
                 sizes="md:100% lg:500px"
               />
@@ -54,6 +53,14 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  &__img-list {
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+      transition: 0.3s;
     }
   }
 }

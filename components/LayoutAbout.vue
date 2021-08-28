@@ -27,12 +27,7 @@
           </div>
         </div>
         <div class="about__img">
-          <nuxt-img
-            :src="img"
-            quality="80"
-            class="inline-block"
-            preset="avatar"
-          />
+          <nuxt-img :src="img" quality="80" preset="avatar" />
         </div>
       </div>
     </section>
