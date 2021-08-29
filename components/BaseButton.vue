@@ -1,5 +1,6 @@
 <template>
   <Nuxt-link
+    v-if="link"
     :to="`/${link}`"
     class="el_btn"
     :style="{
@@ -10,10 +11,25 @@
       'font-weight': `${weight}`,
       'margin-top': `${mt}px`,
     }"
-    @click="clickEvent"
+    @click="$emit('parent-event')"
   >
     <slot />
   </Nuxt-link>
+  <button
+    v-else
+    class="el_btn"
+    :style="{
+      color: color,
+      'background-color': bg,
+      padding: `${paddingHeight}em ${paddingWidth}em`,
+      'border-radius': `${weapon}px`,
+      'font-weight': `${weight}`,
+      'margin-top': `${mt}px`,
+    }"
+    @click="$emit('parent-event')"
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -51,12 +67,6 @@ export default {
     mt: {
       type: Number,
       default: 30,
-    },
-  },
-  methods: {
-    clickEvent() {
-      // イベント名はそれぞれ異なるため抽象度が高い命名
-      this.$emit('parent-event')
     },
   },
 }
