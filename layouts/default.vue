@@ -10,7 +10,7 @@
     </client-only>
     <Nuxt />
     <!-- <layout-footer /> -->
-    <mobile-menu :is-active="isActive" />
+    <mobile-menu :is-active="isActive" :links="links" />
     <div v-if="isActive" class="mobile-menu__cover" @click="clickChange"></div>
   </div>
 </template>
@@ -64,6 +64,11 @@ body {
   min-height: 100vh;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .mobile-menu__cover {
   width: 100vw;
   height: 100vh;
@@ -73,5 +78,10 @@ body {
   overflow: hidden;
   z-index: 50;
   opacity: 0.7;
+}
+
+.inner {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 </style>

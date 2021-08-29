@@ -1,9 +1,11 @@
 <template>
   <nav class="mobile-menu" :class="{ active: isActive }">
     <ul class="mobile-menu__ul">
-      <li v-for="(route, index) in links" :key="index" class="mobile-menu__li">
-        <nuxt-link to="`/${route.link}`">{{ route.name }}</nuxt-link>
-      </li>
+      <template v-for="(route, index) in links">
+        <li :key="index" class="mobile-menu__li">
+          <nuxt-link to="`/${route.link}`">{{ route.name }}</nuxt-link>
+        </li>
+      </template>
     </ul>
   </nav>
 </template>
@@ -12,24 +14,11 @@
 export default {
   props: {
     isActive: Boolean,
-  },
-  data() {
-    return {
-      links: [
-        {
-          name: 'Home',
-          link: '',
-        },
-        {
-          name: 'Profile',
-          link: 'profile',
-        },
-        {
-          name: 'Blog',
-          link: 'blog',
-        },
-      ],
-    }
+    links: {
+      type: Array,
+      default: () => [],
+      required: true,
+    },
   },
 }
 </script>
