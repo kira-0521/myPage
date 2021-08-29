@@ -95,6 +95,8 @@ export default {
   }
 
   &__img {
+    border-radius: 15px;
+    box-shadow: 2px 2px 21px rgba(0, 0, 0, 0.3);
     @media screen and (max-width: 769px) {
       margin-top: 30px;
     }

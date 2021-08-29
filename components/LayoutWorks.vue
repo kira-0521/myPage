@@ -5,15 +5,26 @@
         <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
         <ul class="works__img">
           <template v-for="work in works">
-            <li :key="work.id" class="works__img-list">
-              <nuxt-img
-                :src="work.img"
-                quality="100"
-                preset="avatar"
-                sizes="md:100% lg:500px"
-              />
+            <li :key="work.id" class="works__img-list" @click="openModal(work)">
+              <figure>
+                <nuxt-img
+                  :src="work.img"
+                  quality="100"
+                  preset="avatar"
+                  sizes="md:100% lg:500px"
+                  class="image"
+                />
+                <a href="#">
+                  <figcaption>{{ work.name }}</figcaption>
+                </a>
+              </figure>
             </li>
           </template>
+          <Modal
+            v-if="modalFlag"
+            :val="postItem"
+            @close-modal="closeModal"
+          ></Modal>
         </ul>
       </div>
     </section>
@@ -29,14 +40,33 @@ export default {
       works: [
         {
           id: 1,
+          name: 'work1',
           img: '/images/sample.jpg',
+          skills: 'HTML, CSS, JavaScript',
+          description:
+            'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
         },
         {
           id: 2,
+          name: 'work2',
           img: '/images/sample2.jpg',
+          skills: 'HTML, CSS, JavaScript',
+          description:
+            'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
         },
       ],
+      postItem: null,
+      modalFlag: false,
     }
+  },
+  methods: {
+    openModal(item) {
+      this.postItem = item
+      this.modalFlag = true
+    },
+    closeModal() {
+      this.modalFlag = false
+    },
   },
 }
 </script>
@@ -57,11 +87,16 @@ export default {
   }
 
   &__img-list {
-    &:hover {
+    &:hover .image {
       cursor: pointer;
-      opacity: 0.8;
-      transition: 0.3s;
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
     }
   }
+}
+
+.image {
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 </style>
