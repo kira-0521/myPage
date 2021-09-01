@@ -2,32 +2,13 @@
   <section class="contact" :class="paddingChange">
     <div class="inner contact__inner">
       <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
-      <Form
-        :name="name"
-        :email="email"
-        :text="text"
-        @emilSend="$emit('email-send')"
-      ></Form>
+      <Form></Form>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  props: {
-    name: {
-      type: String,
-      default: '',
-    },
-    email: {
-      type: String,
-      default: '',
-    },
-    text: {
-      type: String,
-      default: '',
-    },
-  },
   data() {
     return {
       title: 'Contact',

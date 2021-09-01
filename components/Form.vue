@@ -2,29 +2,18 @@
   <form class="form" @submit.prevent="$emit('email-send')">
     <div class="form__el is-halfWidth">
       <p class="label-title">名前<span class="caution">※</span></p>
-      <input
-        :value="name"
-        type="text"
-        class="input-init input-area"
-        @input="$emit('update:name', $event.target.value)"
-      />
+      <input v-model="name" type="text" class="input-init input-area" />
     </div>
     <div class="form__el is-halfWidth">
       <p class="label-title">メールアドレス<span class="caution">※</span></p>
-      <input
-        :value="email"
-        type="text"
-        class="input-init input-area"
-        @input="$emit('update:email', $event.target.value)"
-      />
+      <input v-model="email" type="text" class="input-init input-area" />
     </div>
     <div class="form__el is-halfWidth">
       <p class="label-title">内容<span class="caution">※</span></p>
       <textarea
-        :value="text"
+        v-model="text"
         type="text"
         class="input-init input-area text-area"
-        @input="$emit('update:text', $event.target.value)"
       />
     </div>
     <BaseButton>送信</BaseButton>
@@ -33,21 +22,30 @@
 
 <script>
 export default {
-  props: {
+  computed: {
     name: {
-      type: String,
-      required: true,
-      default: '',
+      get() {
+        return this.$store.state.form.name
+      },
+      set(value) {
+        this.$store.dispatch('formValueChange', { value, form: 'name' })
+      },
     },
     email: {
-      type: String,
-      required: true,
-      default: '',
+      get() {
+        return this.$store.state.form.email
+      },
+      set(value) {
+        this.$store.dispatch('formValueChange', { value, form: 'email' })
+      },
     },
     text: {
-      type: String,
-      required: true,
-      default: '',
+      get() {
+        return this.$store.state.form.text
+      },
+      set(value) {
+        this.$store.dispatch('formValueChange', { value, form: 'text' })
+      },
     },
   },
 }
