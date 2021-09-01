@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section class="about" :style="heightToggle">
     <div class="inner about__inner">
       <div class="about__texts">
         <PagesTitle
@@ -55,6 +55,16 @@ export default {
         paddingWidth: 0.6,
       },
     }
+  },
+  computed: {
+    heightToggle() {
+      const routePath = this.$route.path
+      if (routePath === '/about') {
+        return 'min-height: 100vh;'
+      } else {
+        return 'height: 100%;'
+      }
+    },
   },
 }
 </script>
