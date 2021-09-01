@@ -25,9 +25,7 @@
           >
         </div>
       </div>
-      <div class="about__img">
-        <nuxt-img :src="img" quality="80" preset="avatar" />
-      </div>
+      <nuxt-img :src="img" quality="80" preset="avatar" class="about__img" />
     </div>
   </section>
 </template>
@@ -69,7 +67,7 @@ export default {
   padding: 100px 0;
   &__inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     @media screen and (max-width: 769px) {
       flex-direction: column;
@@ -89,11 +87,23 @@ export default {
 
     &:first-child {
       margin-top: 0;
+      letter-spacing: 3px;
+    }
+    &:nth-child(2) {
+      letter-spacing: 3px;
+    }
+    &:nth-child(3) {
+      letter-spacing: 1px;
+    }
+    &:nth-child(4) {
+      letter-spacing: 1px;
     }
   }
 
   &__img {
     border-radius: 15px;
+    border-radius: 50%;
+    width: 320px;
     box-shadow: 2px 2px 21px rgba(0, 0, 0, 0.3);
     @media screen and (max-width: 769px) {
       margin-top: 30px;
