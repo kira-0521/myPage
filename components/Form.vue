@@ -16,7 +16,13 @@
         class="input-init input-area text-area"
       />
     </div>
-    <BaseButton>送信</BaseButton>
+    <BaseButton
+      :padding-width="4"
+      :padding-height="0.7"
+      :weapon="7"
+      :weight="600"
+      >送信する</BaseButton
+    >
   </form>
 </template>
 
