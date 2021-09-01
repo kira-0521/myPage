@@ -110,7 +110,7 @@ export default {
       content: '';
       display: block;
       width: 100%;
-      height: 1px;
+      height: 2px;
       background-color: $cGreen;
       transition: all 0.3s ease;
       transform: scale(0, 1);
