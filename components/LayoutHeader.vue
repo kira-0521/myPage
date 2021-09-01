@@ -2,17 +2,17 @@
   <header class="header">
     <div class="header__inner">
       <button
-        v-show="windowSize <= 1199"
+        v-show="windowSize <= 768"
         class="mobile-menu__btn"
         :class="{ active: isActive }"
-        @click="buttonClick"
+        @click="$emit('mobile-active')"
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav v-show="1200 <= windowSize" class="header__nav">
+      <nav v-show="769 <= windowSize" class="header__nav">
         <ul class="header__ul">
           <template v-for="link in links">
             <li :key="link.id" class="header__li">
@@ -53,9 +53,6 @@ export default {
   methods: {
     handleResize() {
       this.windowSize = window.innerWidth
-    },
-    buttonClick() {
-      this.$emit('mobile-active')
     },
   },
 }

@@ -68,37 +68,4 @@ export default {
   width: 50%;
   margin-left: auto;
 }
-
-// .arrow {
-//   display: inline-block;
-//   position: absolute;
-//   top: 100%;
-//   left: 50%;
-//   transform: translate(-50%, 0);
-//   z-index: 2;
-//   padding: 10px 10px 110px;
-//   overflow: hidden;
-//   color: $cBlack;
-//   font-size: 14px;
-//   font-family: 'Josefin Sans', sans-serif;
-//   line-height: 1;
-//   letter-spacing: 0.2em;
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   writing-mode: vertical-lr;
-
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     bottom: 0;
-//     left: 50%;
-//     width: 1px;
-//     height: 95px;
-//     background-color: $cBlack;
-//   }
-// }
-// .empty {
-//   height: 100vh;
-//   background-color: $cWhite;
-// }
 </style>
