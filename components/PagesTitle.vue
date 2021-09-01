@@ -41,10 +41,12 @@ export default {
 
   &__title {
     font-size: 38px;
+    letter-spacing: 1px;
     color: $cBlack;
   }
 
   &__subtitle {
+    letter-spacing: 1px;
     font-size: 15px;
     color: $cSecondText;
   }
