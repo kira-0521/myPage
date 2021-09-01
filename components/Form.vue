@@ -23,7 +23,7 @@
       <textarea
         :value="text"
         type="text"
-        class="input-init input-area"
+        class="input-init input-area text-area"
         @input="$emit('update:text', $event.target.value)"
       />
     </div>
@@ -54,8 +54,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import './assets/css/modules/_variables.scss';
+
 .is-halfWidth {
-  width: 50%;
+  width: 60%;
 }
 
 .input-init {
@@ -75,21 +77,25 @@ export default {
   width: 100%;
   padding: 5px;
   margin-top: 5px;
-  color: #545658;
+  color: $cText;
   font-size: 13px;
   line-height: 2;
-  background-color: #fbfbfb;
-  border: 1px solid #d9d9d9;
+  background-color: $cWhite;
+  border: 1px solid $cBorder;
   border-radius: 3px;
+}
+
+.text-area {
+  height: 100px;
 }
 
 .label-title {
   font-size: 12px;
-  color: #545658;
+  color: $cText;
 }
 
 .caution {
-  color: #dd4b39;
+  color: $cReverse;
 }
 
 .form {
@@ -97,7 +103,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 40px;
 
   &__el {
     &:not(:first-child) {

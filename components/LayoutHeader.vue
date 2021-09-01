@@ -96,7 +96,7 @@ export default {
   }
 
   &__link {
-    color: $cBlack;
+    color: $cText;
     font-size: 18px;
     font-weight: 700;
   }

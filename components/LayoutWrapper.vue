@@ -11,7 +11,6 @@ export default {
     routePaddingChange() {
       if (this.$route.path === '/') {
         // eslint-disable-next-line no-console
-        console.log(this.$route.path)
         return 'not-padding'
       } else {
         return 'padding-top'
@@ -30,7 +29,7 @@ export default {
 }
 
 .padding-top {
-  padding-top: 60px !important;
+  padding-top: 80px !important;
 
   @media (min-width: 768px) {
     padding-top: 0;

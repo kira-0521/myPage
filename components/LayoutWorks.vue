@@ -1,34 +1,31 @@
 <template>
-  <layout-wrapper>
-    <section class="works">
-      <div class="inner works__inner">
-        <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
-        <ul class="works__img">
-          <template v-for="work in works">
-            <li :key="work.id" class="works__img-list" @click="openModal(work)">
-              <figure>
-                <nuxt-img
-                  :src="work.img"
-                  quality="100"
-                  preset="avatar"
-                  sizes="md:100% lg:500px"
-                  class="image"
-                />
-                <a href="#">
-                  <figcaption>{{ work.name }}</figcaption>
-                </a>
-              </figure>
-            </li>
-          </template>
-          <Modal
-            v-if="modalFlag"
-            :val="postItem"
-            @close-modal="closeModal"
-          ></Modal>
-        </ul>
-      </div>
-    </section>
-  </layout-wrapper>
+  <section class="works" :style="singlePadding">
+    <div class="inner works__inner">
+      <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
+      <ul class="works__img">
+        <template v-for="work in works">
+          <li :key="work.id" class="works__img-list" @click="openModal(work)">
+            <figure>
+              <nuxt-img
+                :src="work.img"
+                quality="100"
+                preset="avatar"
+                class="image"
+              />
+              <a href="#">
+                <figcaption>{{ work.name }}</figcaption>
+              </a>
+            </figure>
+          </li>
+        </template>
+        <Modal
+          v-if="modalFlag"
+          :val="postItem"
+          @close-modal="closeModal"
+        ></Modal>
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -58,6 +55,16 @@ export default {
       postItem: null,
       modalFlag: false,
     }
+  },
+  computed: {
+    singlePadding() {
+      const routeName = this.$route.path
+      if (routeName === '/works') {
+        return 'padding: 40px 0;'
+      } else {
+        return 'padding: 100px 0;'
+      }
+    },
   },
   methods: {
     openModal(item) {
@@ -98,5 +105,7 @@ export default {
   border-radius: 15px;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
+  width: 300px;
+  height: 300px;
 }
 </style>
