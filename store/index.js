@@ -2,18 +2,19 @@ export const state = () => ({
   form: {
     name: '',
     email: '',
+    tel: null,
     text: '',
   },
 })
 
 export const mutations = {
-  formValueChange(state, { value, form }) {
+  updateForm(state, { form, value }) {
     state.form[form] = value
   },
 }
 
 export const actions = {
-  formValueChange({ commit }, { value, form }) {
-    commit('formValueChange', { value, form })
+  updateForm({ commit }, { form, value }) {
+    commit('updateForm', { form, value })
   },
 }

@@ -114,7 +114,6 @@ export default {
     border-radius: 15px;
     border-radius: 50%;
     width: 320px;
-    box-shadow: 2px 2px 21px rgba(0, 0, 0, 0.3);
     @media screen and (max-width: 769px) {
       margin-top: 30px;
     }
@@ -126,6 +125,7 @@ export default {
   margin-top: 30px;
 
   &__blog {
+    color: $cBlack;
     display: inline-block;
     margin-right: 20px;
   }

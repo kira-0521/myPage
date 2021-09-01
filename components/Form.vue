@@ -1,23 +1,49 @@
 <template>
   <form class="form" @submit.prevent="$emit('email-send')">
-    <div class="form__el is-halfWidth">
-      <p class="label-title">名前<span class="caution">※</span></p>
-      <input v-model="name" type="text" class="input-init input-area" />
+    <div class="form__el">
+      <p class="label-title">名前<span class="caution"> (必須)</span></p>
+      <input
+        v-model="name"
+        type="text"
+        class="input-init input-area"
+        placeholder="例) 山田太郎"
+        required
+      />
     </div>
-    <div class="form__el is-halfWidth">
-      <p class="label-title">メールアドレス<span class="caution">※</span></p>
-      <input v-model="email" type="text" class="input-init input-area" />
+    <div class="form__el">
+      <p class="label-title">
+        メールアドレス<span class="caution"> (必須)</span>
+      </p>
+      <input
+        v-model="email"
+        type="email"
+        class="input-init input-area"
+        placeholder="例) yamadatarou@gmail.com"
+        required
+      />
     </div>
-    <div class="form__el is-halfWidth">
-      <p class="label-title">内容<span class="caution">※</span></p>
+    <div class="form__el">
+      <p class="label-title">電話番号</p>
+      <input
+        v-model="tel"
+        type="tel"
+        class="input-init input-area"
+        placeholder="例) 09012345678"
+      />
+    </div>
+    <div class="form__el">
+      <p class="label-title">内容<span class="caution"> (必須)</span></p>
       <textarea
         v-model="text"
         type="text"
         class="input-init input-area text-area"
+        :rows="rows"
+        required
+        placeholder="例) こんにちは！"
       />
     </div>
     <BaseButton
-      :padding-width="4"
+      :padding-width="3"
       :padding-height="0.7"
       :weapon="7"
       :weight="600"
@@ -29,12 +55,23 @@
 <script>
 export default {
   computed: {
+    form() {
+      return this.$store.state.form
+    },
+    rows() {
+      const num = this.form.text.split('\n').length
+      return num > 3 ? num : 3
+    },
     name: {
       get() {
         return this.$store.state.form.name
       },
       set(value) {
-        this.$store.dispatch('formValueChange', { value, form: 'name' })
+        this.$store.dispatch({
+          type: 'updateForm',
+          name: 'name',
+          value,
+        })
       },
     },
     email: {
@@ -42,7 +79,23 @@ export default {
         return this.$store.state.form.email
       },
       set(value) {
-        this.$store.dispatch('formValueChange', { value, form: 'email' })
+        this.$store.dispatch({
+          type: 'updateForm',
+          name: 'email',
+          value,
+        })
+      },
+    },
+    tel: {
+      get() {
+        return this.$store.state.form.tel
+      },
+      set(value) {
+        this.$store.dispatch({
+          type: 'updateForm',
+          name: 'tel',
+          value,
+        })
       },
     },
     text: {
@@ -50,7 +103,11 @@ export default {
         return this.$store.state.form.text
       },
       set(value) {
-        this.$store.dispatch('formValueChange', { value, form: 'text' })
+        this.$store.dispatch({
+          type: 'updateForm',
+          name: 'text',
+          value,
+        })
       },
     },
   },
@@ -60,8 +117,8 @@ export default {
 <style scoped lang="scss">
 @import './assets/css/modules/_variables.scss';
 
-.is-halfWidth {
-  width: 60%;
+::placeholder {
+  color: $placeHolder;
 }
 
 .input-init {
@@ -71,22 +128,21 @@ export default {
   background: transparent;
   border: none;
   outline: none;
-  /* ユーザーが調整できるか */
   resize: none;
 }
 
 .input-area {
   box-sizing: border-box;
   height: 50px;
-  width: 100%;
+  width: 300px;
   padding: 5px;
   margin-top: 5px;
   color: $cText;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 2;
   background-color: $cWhite;
-  border: 1px solid $cBorder;
-  border-radius: 3px;
+  border: 2px solid $cBorder;
+  border-radius: 7px;
 }
 
 .text-area {

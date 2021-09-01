@@ -83,7 +83,7 @@ export default {
   &__img {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 40px;
 
     @media screen and (max-width: 769px) {
