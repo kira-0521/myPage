@@ -13,9 +13,7 @@
       </button>
 
       <nav v-show="769 <= windowSize" class="header__nav">
-        <nuxt-link to="/" style="width: 43px; height: 43px">
-          <nuxt-img :src="img" class="header__img" />
-        </nuxt-link>
+        <nuxt-link to="/" style="width: 43px; height: 43px"> myPage </nuxt-link>
         <ul class="header__ul">
           <template v-for="link in links">
             <li :key="link.id" class="header__li">
@@ -23,6 +21,8 @@
                 class="header__link"
                 :to="link.path"
                 :class="link.className"
+                active-class="active-link"
+                exact
                 >{{ link.name }}</nuxt-link
               >
             </li>
@@ -105,13 +105,34 @@ export default {
 
   &__li {
     margin-left: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $cGreen;
+      transition: all 0.3s ease;
+      transform: scale(0, 1);
+      transform-origin: center top;
+    }
+
+    &:hover {
+      &::after {
+        transform: scale(1, 1);
+      }
+    }
   }
 
   &__link {
     color: $cText;
     font-size: 18px;
-    font-weight: 700;
   }
+}
+
+.active-link {
+  color: $cGreen;
+  font-weight: 900;
 }
 
 .mobile-menu__btn {
