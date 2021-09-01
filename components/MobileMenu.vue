@@ -1,9 +1,9 @@
 <template>
   <nav class="mobile-menu" :class="{ active: isActive }">
     <ul class="mobile-menu__ul">
-      <template v-for="(route, index) in links">
-        <li :key="index" class="mobile-menu__li">
-          <nuxt-link to="`/${route.link}`">{{ route.name }}</nuxt-link>
+      <template v-for="link in links">
+        <li :key="link.id" class="mobile-menu__li">
+          <nuxt-link :to="link.path">{{ link.name }}</nuxt-link>
         </li>
       </template>
     </ul>

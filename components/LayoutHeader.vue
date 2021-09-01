@@ -13,12 +13,15 @@
       </button>
 
       <nav v-show="769 <= windowSize" class="header__nav">
+        <nuxt-link to="/" style="width: 43px; height: 43px">
+          <nuxt-img :src="img" class="header__img" />
+        </nuxt-link>
         <ul class="header__ul">
           <template v-for="link in links">
             <li :key="link.id" class="header__li">
               <nuxt-link
                 class="header__link"
-                :to="`/${link.path}`"
+                :to="link.path"
                 :class="link.className"
                 >{{ link.name }}</nuxt-link
               >
@@ -42,6 +45,7 @@ export default {
   data() {
     return {
       windowSize: window.innerWidth,
+      img: '/images/K.png',
     }
   },
   mounted() {
@@ -80,10 +84,21 @@ export default {
     padding: 0 3%;
   }
 
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    width: 43px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+  }
+
   &__ul {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
     padding: 0;
     margin: 0;
   }
@@ -104,6 +119,8 @@ export default {
   border: none;
   outline: none !important;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
 
   & > span {
     background-color: $cBlack;

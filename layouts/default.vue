@@ -23,25 +23,25 @@ export default {
       links: [
         {
           id: 1,
-          path: '',
+          path: '/',
           name: 'Home',
           className: 'home',
         },
         {
           id: 2,
-          path: 'about',
+          path: '/about',
           name: 'About',
           className: 'about',
         },
         {
           id: 3,
-          path: 'works',
+          path: '/works',
           name: 'Works',
           className: 'works',
         },
         {
           id: 4,
-          path: 'contact',
+          path: '/contact',
           name: 'Contact',
           className: 'contact',
         },

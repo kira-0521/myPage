@@ -24,7 +24,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 80px;
+  height: 70px;
 
   &__text {
     color: $cText;

@@ -8,7 +8,7 @@
           :link="btnStyle.link"
           :color="btnStyle.color"
           :mt="btnStyle.mt"
-          >Contact →</BaseButton
+          >Contact</BaseButton
         >
       </div>
     </div>
@@ -43,13 +43,18 @@ export default {
   min-height: 100vh;
 
   &__inner {
-    text-align: right;
     padding-top: 180px;
+    max-width: $contentMaxWidth;
+    margin: 0 auto;
   }
 
   &__title {
     font-size: 82px;
     color: $cBlack;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+    }
   }
 
   &__text {
@@ -57,15 +62,22 @@ export default {
     color: $cSecondText;
     display: inline-block;
     word-break: break-all;
-    position: relative;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 }
 
 .align-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 50%;
-  margin-left: auto;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
 }
 </style>
