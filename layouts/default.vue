@@ -9,7 +9,7 @@
       />
     </client-only>
     <Nuxt />
-    <!-- <layout-footer /> -->
+    <layout-footer />
     <mobile-menu :is-active="isActive" :links="links" />
     <div v-if="isActive" class="mobile-menu__cover" @click="clickChange"></div>
   </div>

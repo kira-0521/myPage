@@ -1,12 +1,17 @@
 <template>
   <footer class="footer">
-    <p class="footer__text">Copyright &copy; Kira Tanaka</p>
+    <p class="footer__text">Copyright &copy; {{ name }}</p>
   </footer>
 </template>
 
 <script>
 export default {
   name: 'LayoutFooter',
+  data() {
+    return {
+      name: 'Kira Tanaka',
+    }
+  },
 }
 </script>
 
@@ -14,9 +19,7 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  background-color: $cBlack;
+  background-color: $cWhite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +27,7 @@ export default {
   height: 80px;
 
   &__text {
-    color: $cWhite;
+    color: $cText;
   }
 }
 </style>
