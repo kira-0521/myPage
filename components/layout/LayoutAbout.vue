@@ -16,11 +16,12 @@
         <div class="link">
           <span class="link__blog">Blog</span>
           <BaseButton
-            :link="btnStyle.link"
-            :color="btnStyle.color"
-            :mt="btnStyle.mt"
-            :padding-height="btnStyle.paddingHeight"
-            :padding-width="btnStyle.paddingWidth"
+            :link="btn.link"
+            :color="btn.color"
+            :bg="btn.bg"
+            :mt="0"
+            :padding-height="0.5"
+            :padding-width="0.6"
             >→</BaseButton
           >
         </div>
@@ -47,12 +48,10 @@ export default {
       titleStyle: {
         align: 'left',
       },
-      btnStyle: {
+      btn: {
         link: 'blog',
-        color: '#fff',
-        mt: 0,
-        paddingHeight: 0.5,
-        paddingWidth: 0.6,
+        color: '#072720',
+        bg: '#25c49f',
       },
     }
   },
@@ -114,6 +113,7 @@ export default {
     border-radius: 15px;
     border-radius: 50%;
     width: 320px;
+    transition: 0.3s;
     @media screen and (max-width: 769px) {
       margin-top: 30px;
     }

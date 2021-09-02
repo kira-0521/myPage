@@ -13,7 +13,7 @@
       </button>
 
       <nav v-show="769 <= windowSize" class="header__nav">
-        <nuxt-link to="/" style="width: 43px; height: 43px"> myPage </nuxt-link>
+        <nuxt-link to="/">myPage</nuxt-link>
         <ul class="header__ul">
           <template v-for="link in links">
             <li :key="link.id" class="header__li">

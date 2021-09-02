@@ -47,6 +47,7 @@
       :padding-height="0.7"
       :weapon="7"
       :weight="600"
+      :bg="bg"
       >送信する</BaseButton
     >
   </form>
@@ -54,6 +55,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      bg: '#072720',
+    }
+  },
   computed: {
     form() {
       return this.$store.state.form
