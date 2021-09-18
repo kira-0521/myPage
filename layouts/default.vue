@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- SSR無効 -->
+    <SideSns />
     <client-only>
       <layout-header
         :is-active="isActive"
