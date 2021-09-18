@@ -13,7 +13,7 @@
       </button>
 
       <nav v-show="769 <= windowSize" class="header__nav">
-        <nuxt-link to="/">myPage</nuxt-link>
+        <nuxt-link to="/" class="header__title">MyPage</nuxt-link>
         <ul class="header__ul">
           <template v-for="link in links">
             <li :key="link.id" class="header__li">
@@ -66,41 +66,46 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .header {
-  background-color: $cWhite;
+  z-index: 10;
+  width: 100%;
   opacity: 0.9;
   height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 10;
-  position: fixed;
+  justify-content: center;
   top: 0;
   left: 0;
-  width: 100%;
+  position: fixed;
+  background-color: $cWhite;
 
   &__inner {
+    padding: 0 3%;
     margin: 0 auto;
     width: $contentMaxWidth;
-    padding: 0 3%;
   }
 
   &__nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-family: 'Alberta';
   }
 
   &__img {
+    margin: 0;
     width: 43px;
     border-radius: 50%;
     display: inline-block;
-    margin: 0;
   }
 
   &__ul {
-    display: flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
   }
 
   &__li {
@@ -108,9 +113,9 @@ export default {
 
     &::after {
       content: '';
-      display: block;
       width: 100%;
       height: 2px;
+      display: block;
       background-color: $cGreen;
       transition: all 0.3s ease;
       transform: scale(0, 1);
@@ -136,19 +141,19 @@ export default {
 }
 
 .mobile-menu__btn {
-  background-color: unset;
   border: none;
-  outline: none !important;
-  cursor: pointer;
   display: block;
+  cursor: pointer;
   margin-left: auto;
+  background-color: unset;
+  outline: none !important;
 
   & > span {
-    background-color: $cBlack;
     width: 35px;
     height: 2px;
     display: block;
     margin-bottom: 9px;
+    background-color: $cBlack;
     transition: transform 0.4s;
 
     &:last-child {

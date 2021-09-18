@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       tagline: 'Kira Tanaka',
-      text: 'WEBエンジニア',
+      text: 'WEB Engineer',
       btnStyle: {
         link: 'contact',
         color: '#fff',
@@ -37,15 +37,15 @@ export default {
 @import './assets/css/modules/_variables.scss';
 
 .layoutVisual {
+  margin: 0;
   width: 100%;
   overflow: hidden;
-  margin: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    112.76846665913376deg,
-    rgba(146, 226, 207, 1) 29.35590277777778%,
-    rgba(211, 243, 236, 1) 73.03645833333333%
-  );
+  // background: linear-gradient(
+  //   112.76846665913376deg,
+  //   rgba(146, 226, 207, 1) 29.35590277777778%,
+  //   rgba(211, 243, 236, 1) 73.03645833333333%
+  // );
   &__inner {
     padding-top: 180px;
     max-width: $contentMaxWidth;
@@ -53,8 +53,9 @@ export default {
   }
 
   &__title {
-    font-size: 82px;
     color: $cBlack;
+    font-size: 82px;
+    font-family: 'Alberta';
 
     @media screen and (max-width: 768px) {
       font-size: 40px;
@@ -66,6 +67,7 @@ export default {
     color: $cSecondText;
     display: inline-block;
     word-break: break-all;
+    font-family: 'Alberta';
 
     @media screen and (max-width: 768px) {
       font-size: 20px;
