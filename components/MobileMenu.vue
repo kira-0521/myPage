@@ -55,6 +55,12 @@ export default {
       margin-top: 10px;
       background-color: $cSecondText;
     }
+
+    & > a {
+      display: block;
+      padding: 10px;
+      color: $cText;
+    }
   }
 }
 

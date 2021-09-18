@@ -154,7 +154,7 @@ export default {
     display: block;
     margin-bottom: 9px;
     background-color: $cBlack;
-    transition: transform 0.4s;
+    transition: transform 0.3s;
 
     &:last-child {
       margin-bottom: 0;
