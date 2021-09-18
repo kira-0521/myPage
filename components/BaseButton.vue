@@ -73,8 +73,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/css/modules/_variables.scss';
-
 .el_btn {
   border: none;
   outline: none;

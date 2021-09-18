@@ -27,6 +27,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap',
       },
+      {
+        rel: 'stylesheet',
+        href: './assets/css/style.scss',
+      },
     ],
   },
 
@@ -34,10 +38,8 @@ export default {
   css: [
     // リセットCSS
     'modern-css-reset',
-    // プロジェクト内の CSS ファイル
-    '@/assets/css/main.css',
     // プロジェクト内の SCSS ファイル
-    '@/assets/css/main.scss',
+    '@/assets/css/style.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

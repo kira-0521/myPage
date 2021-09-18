@@ -41,7 +41,11 @@ export default {
   overflow: hidden;
   margin: 0;
   min-height: 100vh;
-
+  background: linear-gradient(
+    112.76846665913376deg,
+    rgba(146, 226, 207, 1) 29.35590277777778%,
+    rgba(211, 243, 236, 1) 73.03645833333333%
+  );
   &__inner {
     padding-top: 180px;
     max-width: $contentMaxWidth;
