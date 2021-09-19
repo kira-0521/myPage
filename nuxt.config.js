@@ -56,12 +56,20 @@ export default {
     '@nuxtjs/dotenv',
     // 画像最適化
     '@nuxt/image',
+    'nuxt-microcms-module',
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // 画像最適化
     '@aceforth/nuxt-optimized-images',
   ],
+  microcms: {
+    options: {
+      serviceDomain: 'myPage', // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+      apiKey: 'aebf3989-317c-41bd-ba6a-e969b4612cd2',
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  },
   // 画像最適化
   optimizedImages: {
     // 本番環境
