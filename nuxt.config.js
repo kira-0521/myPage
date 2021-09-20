@@ -33,7 +33,7 @@ export default {
       },
     ],
   },
-
+  script: [{ src: 'routeLinksArray.js' }],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // リセットCSS
