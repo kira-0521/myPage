@@ -37,14 +37,13 @@
     color: $cText;
   }
 }
+
 .twitter {
   margin-right: 30px;
-  // 表示されない
-  // &::before {
-  //   content: '';
-  //   background: url('/static/images/sample.jpg') no-repeat center / contain;
-  //   width: 30px;
-  //   height: 30px;
-  // }
+  color: $twitter;
+}
+
+.qiita {
+  color: $qiita;
 }
 </style>
