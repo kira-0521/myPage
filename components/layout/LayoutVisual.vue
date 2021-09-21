@@ -66,6 +66,7 @@ export default {
     color: $cBlack;
     font-size: 82px;
     font-family: 'Alberta';
+    text-align: center;
 
     @media screen and (max-width: 768px) {
       font-size: 46px;
