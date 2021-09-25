@@ -1,6 +1,7 @@
-// baseスタイル
-@import './base.scss';
-
 // modules
 @import './modules/variables';
 @import './modules/mixin';
+@import './modules/slide-transition';
+
+// baseスタイル
+@import './base.scss';

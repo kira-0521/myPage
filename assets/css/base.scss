@@ -15,16 +15,25 @@ ul {
   list-style: none;
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.4s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-
 @font-face {
   font-family: 'Alberta'; // <-好きな名前をつけれます。
   src: url('../font/Alberta.otf') format("opentype");
+}
+
+.is-pc {
+  @include pcall {
+    display: block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.is-sp {
+  @include pcall {
+    display: none;
+  }
+  @include sp {
+    display: block;
+  }
 }
