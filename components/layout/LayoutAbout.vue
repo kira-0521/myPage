@@ -70,6 +70,7 @@ export default {
 
 <style scoped lang="scss">
 @import './assets/css/modules/_variables.scss';
+@import './assets/css/modules/_mixin.scss';
 
 .about {
   background-color: $cSecondBg;
@@ -78,7 +79,7 @@ export default {
     display: flex;
     justify-content: space-evenly;
 
-    @media screen and (max-width: 769px) {
+    @include sp {
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -114,7 +115,7 @@ export default {
     border-radius: 50%;
     width: 320px;
     transition: 0.3s;
-    @media screen and (max-width: 769px) {
+    @include sp {
       margin-top: 30px;
     }
   }

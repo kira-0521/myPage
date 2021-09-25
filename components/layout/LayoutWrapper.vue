@@ -22,6 +22,7 @@ export default {
 
 <style scoped lang="scss">
 @import './assets/css/modules/_variables.scss';
+@import './assets/css/modules/_mixin.scss';
 
 .wrapper {
   min-height: 100vh;
@@ -31,7 +32,7 @@ export default {
 .padding-top {
   padding-top: 80px !important;
 
-  @media (min-width: 768px) {
+  @include sp {
     padding-top: 0;
   }
 }

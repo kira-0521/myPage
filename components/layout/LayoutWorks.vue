@@ -79,6 +79,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import './assets/css/modules/_variables.scss';
+@import './assets/css/modules/_mixin.scss';
+
 .works {
   &__img {
     display: flex;
@@ -86,7 +89,7 @@ export default {
     justify-content: space-evenly;
     margin-top: 40px;
 
-    @media screen and (max-width: 769px) {
+    @include sp {
       flex-direction: column;
       align-items: center;
       justify-content: center;
