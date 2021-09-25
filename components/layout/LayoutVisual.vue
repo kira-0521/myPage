@@ -36,6 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/css/modules/_variables.scss';
+@import './assets/css/modules/_mixin.scss';
 
 .layoutVisual {
   margin: 0;
@@ -57,7 +58,7 @@ export default {
     width: 50%;
     margin: 0 auto;
 
-    @media screen and (max-width: 768px) {
+    @include sp {
       align-items: center;
     }
   }
@@ -68,7 +69,7 @@ export default {
     font-family: 'Alberta';
     text-align: center;
 
-    @media screen and (max-width: 768px) {
+    @include sp {
       font-size: 46px;
     }
   }
@@ -80,7 +81,7 @@ export default {
     word-break: break-all;
     font-family: 'Alberta';
 
-    @media screen and (max-width: 768px) {
+    @include sp {
       font-size: 20px;
     }
   }
