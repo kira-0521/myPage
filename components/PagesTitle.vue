@@ -11,12 +11,10 @@ export default {
     title: {
       type: String,
       default: 'About',
-      required: true,
     },
     subtitle: {
       type: String,
       default: '私について',
-      required: true,
     },
     direction: {
       type: String,

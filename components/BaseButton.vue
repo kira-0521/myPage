@@ -28,7 +28,7 @@
     }"
     @click="$emit('parent-event')"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>
 

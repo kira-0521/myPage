@@ -29,7 +29,7 @@ export default {
   props: {
     val: {
       type: Object,
-      required: true,
+      default: () => ({}),
     },
   },
   methods: {

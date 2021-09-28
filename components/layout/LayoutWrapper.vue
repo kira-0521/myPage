@@ -10,7 +10,6 @@ export default {
   computed: {
     routePaddingChange() {
       if (this.$route.path === '/') {
-        // eslint-disable-next-line no-console
         return 'not-padding'
       } else {
         return 'padding-top'

@@ -3,15 +3,15 @@
     <div class="inner about__inner">
       <div class="about__texts">
         <PagesTitle
-          :title="title"
-          :subtitle="subtitle"
-          :direction="titleStyle.align"
+          :title="pageTitle.title"
+          :subtitle="pageTitle.subtitle"
+          :direction="pageTitle.align"
         ></PagesTitle>
         <div class="about__description">
-          <p class="about__text">{{ me.name }}</p>
-          <p class="about__text">{{ me.from }}</p>
-          <p class="about__text">{{ me.job }}</p>
-          <p class="about__text">{{ me.skills }}</p>
+          <p class="about__text">{{ myInfo.name }}</p>
+          <p class="about__text">{{ myInfo.from }}</p>
+          <p class="about__text">{{ myInfo.job }}</p>
+          <p class="about__text">{{ myInfo.skills }}</p>
         </div>
         <div class="link">
           <span class="link__blog">Blog</span>
@@ -26,7 +26,7 @@
           >
         </div>
       </div>
-      <nuxt-img :src="img" quality="80" preset="avatar" class="about__img" />
+      <nuxt-img :src="image" quality="80" preset="avatar" class="about__img" />
     </div>
   </section>
 </template>
@@ -36,17 +36,17 @@ export default {
   nama: 'layout-about',
   data() {
     return {
-      title: 'About',
-      subtitle: '私について',
-      img: '/images/me.jpg',
-      me: {
+      pageTitle: {
+        title: 'About',
+        subtitle: '私について',
+        align: 'left',
+      },
+      image: '/images/me.jpg',
+      myInfo: {
         name: '田中輝良 / Kira Tanaka',
         from: '長崎県平戸市出身',
         job: 'Web制作 / Webフロントエンド開発',
         skills: 'HTML, CSS(SASS), JavaScript, Vue.js, Nuxt.js',
-      },
-      titleStyle: {
-        align: 'left',
       },
       btn: {
         link: 'blog',
