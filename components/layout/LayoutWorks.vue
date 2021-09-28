@@ -37,16 +37,16 @@ export default {
       works: [
         {
           id: 1,
-          name: 'work1',
-          img: '/images/sample.jpg',
+          name: 'Log',
+          img: '/images/log.png',
           skills: 'HTML, CSS, JavaScript',
           description:
             'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
         },
         {
           id: 2,
-          name: 'work2',
-          img: '/images/sample2.jpg',
+          name: 'StayWorld',
+          img: '/images/stayworld.png',
           skills: 'HTML, CSS, JavaScript',
           description:
             'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
