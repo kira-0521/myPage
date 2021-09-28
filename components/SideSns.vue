@@ -34,7 +34,7 @@
   }
 
   &__sns {
-    color: $cText;
+    font-family: 'Alberta';
   }
 }
 
