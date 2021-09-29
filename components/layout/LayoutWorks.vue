@@ -1,7 +1,11 @@
 <template>
   <section class="works" :style="singlePadding">
     <div class="inner works__inner">
-      <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
+      <PagesTitle
+        :title="title"
+        :subtitle="subtitle"
+        data-aos="fade-up"
+      ></PagesTitle>
       <ul class="works__img">
         <template v-for="work in works">
           <li

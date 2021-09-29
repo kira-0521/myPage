@@ -6,14 +6,15 @@
           :title="pageTitle.title"
           :subtitle="pageTitle.subtitle"
           :direction="pageTitle.align"
+          data-aos="fade-up"
         ></PagesTitle>
-        <div class="about__description">
+        <div class="about__description" data-aos="fade-up">
           <p class="about__text">{{ myInfo.name }}</p>
           <p class="about__text">{{ myInfo.from }}</p>
           <p class="about__text">{{ myInfo.job }}</p>
           <p class="about__text">{{ myInfo.skills }}</p>
         </div>
-        <div class="link">
+        <div class="link" data-aos="fade-up">
           <span class="link__blog">Blog</span>
           <BaseButton
             :link="btn.link"
@@ -28,7 +29,7 @@
       </div>
       <nuxt-img
         :src="image"
-        data-aos="zoom-in"
+        data-aos="fade-up"
         quality="80"
         preset="avatar"
         class="about__img"

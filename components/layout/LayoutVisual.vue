@@ -13,7 +13,6 @@
         <div class="scrollDown"><span>Scroll</span></div>
       </div>
     </div>
-    <!-- <span class="arrow">scroll</span> -->
   </section>
 </template>
 

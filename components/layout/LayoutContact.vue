@@ -1,8 +1,12 @@
 <template>
   <section class="contact" :class="paddingChange">
     <div class="inner contact__inner">
-      <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
-      <Form></Form>
+      <PagesTitle
+        :title="title"
+        :subtitle="subtitle"
+        data-aos="fade-up"
+      ></PagesTitle>
+      <Form data-aos="fade-up"></Form>
     </div>
   </section>
 </template>
