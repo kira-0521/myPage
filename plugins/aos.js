@@ -15,7 +15,7 @@ Vue.use(
     debounceDelay: 50,
     throttleDelay: 99,
 
-    offset: 120, // 要素がどのくらい入ったか
+    offset: 150, // 要素がどのくらい入ったか
     delay: 0,
     duration: 400,
     easing: 'linear',

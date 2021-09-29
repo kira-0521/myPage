@@ -26,7 +26,13 @@
           >
         </div>
       </div>
-      <nuxt-img :src="image" quality="80" preset="avatar" class="about__img" />
+      <nuxt-img
+        :src="image"
+        data-aos="zoom-in"
+        quality="80"
+        preset="avatar"
+        class="about__img"
+      />
     </div>
   </section>
 </template>
