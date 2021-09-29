@@ -4,7 +4,12 @@
       <PagesTitle :title="title" :subtitle="subtitle"></PagesTitle>
       <ul class="works__img">
         <template v-for="work in works">
-          <li :key="work.id" class="works__img-list" @click="openModal(work)">
+          <li
+            :key="work.id"
+            class="works__img-list"
+            data-aos="fade-up"
+            @click="openModal(work)"
+          >
             <figure>
               <nuxt-img
                 :src="work.img"

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
+    "aos": "^2.3.4",
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "fibers": "^5.0.0",
