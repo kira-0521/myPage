@@ -41,16 +41,6 @@ export default {
 <style lang="scss">
 @import './assets/css/modules/_variables.scss';
 
-body {
-  position: relative;
-  min-height: 100vh;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
 .mobile-menu__cover {
   width: 100vw;
   height: 100vh;
@@ -60,10 +50,5 @@ ul {
   overflow: hidden;
   z-index: 50;
   opacity: 0.7;
-}
-
-.inner {
-  max-width: 1080px;
-  margin: 0 auto;
 }
 </style>
