@@ -4,19 +4,26 @@
       <div class="modal__window">
         <div class="modal__content">
           <figure class="figure">
-            <a href="#">
+            <a :href="val.link">
               <nuxt-img
                 :src="val.img"
                 quality="100"
                 preset="avatar"
                 sizes="md:100% lg:500px"
+                class="figure__image"
               />
             </a>
           </figure>
           <figcaption class="figcaption">
             <h3 class="figcaption__title">{{ val.name }}</h3>
-            <p class="figcaption__text">{{ val.skills }}</p>
-            <p class="figcaption__text">{{ val.description }}</p>
+            <p class="figcaption__text">
+              <span class="figcaption__supplement">Skills</span>:
+              {{ val.skills }}
+            </p>
+            <p class="figcaption__text">
+              <span class="figcaption__supplement">説明</span>:
+              {{ val.description }}
+            </p>
           </figcaption>
         </div>
       </div>
@@ -59,37 +66,52 @@ export default {
   }
 
   &__window {
-    height: 55%;
     width: 60%;
+    border-radius: 10px;
     overflow: hidden;
     background-color: $cWhite;
   }
 
   &__content {
-    height: 100%;
     padding: 30px;
     font-size: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
   }
 }
 
 .figure {
   display: inline-block;
   width: 40%;
+
+  &__image {
+    border-radius: 10px;
+  }
 }
 
 .figcaption {
   display: inline-block;
   width: 40%;
   margin-left: 30px;
+  letter-spacing: 0.1em;
 
   &__title {
     font-size: 30px;
-    color: $cBlack;
+    color: $cGreen;
   }
 
   &__text {
     font-size: 16px;
+    color: $cText;
+    margin-top: 10px;
+  }
+
+  &__supplement {
+    font-weight: bold;
     color: $cBlack;
+    margin-top: 10px;
   }
 }
 // transition

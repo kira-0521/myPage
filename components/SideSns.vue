@@ -2,7 +2,7 @@
   <aside class="side">
     <div class="side__inner">
       <a
-        href="https://twitter.com/progLog88"
+        href="https://twitter.com/kirarin_front"
         class="side__sns twitter"
         target="_blank"
         >Twitter</a

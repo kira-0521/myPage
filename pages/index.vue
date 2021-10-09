@@ -1,8 +1,10 @@
 <template>
-  <layout-wrapper>
+  <div class="main">
     <layout-visual />
-    <layout-about />
-    <layout-works />
-    <layout-contact />
-  </layout-wrapper>
+    <layout-wrapper>
+      <layout-about />
+      <layout-works />
+      <layout-contact />
+    </layout-wrapper>
+  </div>
 </template>

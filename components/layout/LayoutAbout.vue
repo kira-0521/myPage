@@ -81,7 +81,7 @@ export default {
 
 .about {
   background-color: $cSecondBg;
-  padding: 100px 0;
+  padding: 100px 20px;
   &__inner {
     display: flex;
     justify-content: space-evenly;

@@ -19,5 +19,8 @@ export default {
     })
     return data
   },
+  created() {
+    console.log(this.$microcms)
+  },
 }
 </script>

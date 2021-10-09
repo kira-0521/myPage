@@ -6,23 +6,20 @@
         :subtitle="subtitle"
         data-aos="fade-up"
       ></PagesTitle>
-      <ul class="works__img">
-        <template v-for="work in works">
+      <ul class="works__contents">
+        <template v-for="work in worksArray">
           <li
             :key="work.id"
-            class="works__img-list"
+            class="works__contents__list"
             data-aos="fade-up"
             @click="openModal(work)"
           >
-            <figure>
-              <nuxt-img
-                :src="work.img"
-                quality="100"
-                preset="avatar"
-                class="image"
-              />
-              <a href="#">
-                <figcaption>{{ work.name }}</figcaption>
+            <figure class="works__contents__image">
+              <nuxt-img :src="work.img" quality="100" preset="avatar" />
+              <a :href="work.link">
+                <figcaption class="works__contents__name">
+                  {{ work.name }}
+                </figcaption>
               </a>
             </figure>
           </li>
@@ -38,34 +35,21 @@
 </template>
 
 <script>
+import worksArray from '../../static/modules/works'
+
 export default {
   data() {
     return {
       title: 'Works',
       subtitle: '活動実績',
-      works: [
-        {
-          id: 1,
-          name: 'Log',
-          img: '/images/log.png',
-          skills: 'HTML, CSS, JavaScript',
-          description:
-            'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
-        },
-        {
-          id: 2,
-          name: 'StayWorld',
-          img: '/images/stayworld.png',
-          skills: 'HTML, CSS, JavaScript',
-          description:
-            'サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル',
-        },
-      ],
       postItem: null,
       modalFlag: false,
     }
   },
   computed: {
+    worksArray() {
+      return worksArray
+    },
     singlePadding() {
       const routeName = this.$route.path
       if (routeName === '/works') {
@@ -92,7 +76,7 @@ export default {
 @import './assets/css/modules/_mixin.scss';
 
 .works {
-  &__img {
+  &__contents {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -103,21 +87,37 @@ export default {
       align-items: center;
       justify-content: center;
     }
-  }
 
-  &__img-list {
-    &:hover .image {
-      cursor: pointer;
-      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+    &__list {
+      &:hover .image {
+        cursor: pointer;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      @include sp {
+        &:not(:first-child) {
+          margin-top: 35px;
+        }
+      }
+    }
+
+    &__image {
+      & > img {
+        border-radius: 15px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    &__name {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: $cBlack;
+      font-size: 20px;
     }
   }
-}
-
-.image {
-  border-radius: 15px;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-  width: 300px;
-  height: 300px;
 }
 </style>
