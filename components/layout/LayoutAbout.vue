@@ -48,7 +48,7 @@ export default {
         subtitle: '私について',
         align: 'left',
       },
-      image: '/images/me.jpg',
+      image: '/images/me.png',
       myInfo: {
         name: '田中輝良 / Kira Tanaka',
         from: '長崎県平戸市出身',

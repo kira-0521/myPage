@@ -23,10 +23,10 @@ export default [
     name: 'Contact',
     className: 'contact',
   },
-  {
-    id: 5,
-    path: '/bloglist',
-    name: 'Blog',
-    className: 'blog',
-  },
+  // {
+  //   id: 5,
+  //   path: '/bloglist',
+  //   name: 'Blog',
+  //   className: 'blog',
+  // },
 ]

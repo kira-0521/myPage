@@ -1,10 +1,10 @@
 <template>
-  <div class="main">
+  <main class="main">
     <layout-visual />
     <layout-wrapper>
       <layout-about />
       <layout-works />
       <layout-contact />
     </layout-wrapper>
-  </div>
+  </main>
 </template>

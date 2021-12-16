@@ -4,7 +4,7 @@
       <div class="modal__window">
         <div class="modal__content">
           <figure class="figure">
-            <a :href="val.link">
+            <a :href="val.link" target="_blank">
               <nuxt-img
                 :src="val.img"
                 quality="100"
