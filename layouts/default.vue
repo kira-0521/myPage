@@ -2,13 +2,13 @@
   <div>
     <!-- SSR無効 -->
     <!-- <SideSns /> -->
-    <client-only>
+    <no-ssr>
       <layout-header
         :is-active="isActive"
         :links="links"
         @mobile-active="isActive = !isActive"
       />
-    </client-only>
+    </no-ssr>
     <Nuxt />
     <layout-footer />
     <mobile-menu :is-active="isActive" :links="links" />
