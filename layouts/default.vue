@@ -6,7 +6,7 @@
       <layout-header
         :is-active="isActive"
         :links="links"
-        @mobile-active="mobileToggle"
+        @mobile-active="isActive = !isActive"
       />
     </client-only>
     <Nuxt />
