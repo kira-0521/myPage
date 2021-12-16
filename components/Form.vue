@@ -1,5 +1,5 @@
 <template>
-  <form class="form" method="POST" data-netlify="true">
+  <form class="form">
     <div class="form__el">
       <p class="label-title">名前<span class="caution"> (必須)</span></p>
       <input
