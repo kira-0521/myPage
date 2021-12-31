@@ -9,7 +9,6 @@
                 :src="val.img"
                 quality="100"
                 preset="avatar"
-                sizes="md:100% lg:500px"
                 class="figure__image"
               />
             </a>
@@ -49,6 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/css/modules/_variables.scss';
+@import './assets/css/modules/_mixin.scss';
 
 .modal {
   &__overlay {
@@ -66,46 +66,80 @@ export default {
   }
 
   &__window {
-    width: 60%;
+    width: 90%;
     border-radius: 10px;
     overflow: hidden;
     background-color: $cWhite;
+
+    @include pc {
+      width: 60%;
+    }
   }
 
   &__content {
-    padding: 30px;
+    padding: 15px;
     font-size: 0;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    gap: 30px;
     position: relative;
+
+    @include pc {
+      padding: 50px 30px;
+      flex-direction: row;
+    }
   }
 }
 
 .figure {
   display: inline-block;
-  width: 40%;
 
   &__image {
     border-radius: 10px;
+
+    @include pcmiddle {
+      height: 50%;
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 }
 
 .figcaption {
   display: inline-block;
-  width: 40%;
-  margin-left: 30px;
   letter-spacing: 0.1em;
 
+  @include pc {
+    width: 50%;
+  }
   &__title {
     font-size: 30px;
-    color: $cGreen;
+    color: $cText;
+    position: relative;
+    margin-left: 15px;
+
+    &::before {
+      content: '';
+      width: 3px;
+      height: 29px;
+      border-radius: 10px;
+      position: absolute;
+      top: 11px;
+      left: -15px;
+      background-color: #25c49f;
+    }
   }
 
   &__text {
     font-size: 16px;
     color: $cText;
     margin-top: 10px;
+
+    @include pc {
+      width: 70%;
+    }
   }
 
   &__supplement {

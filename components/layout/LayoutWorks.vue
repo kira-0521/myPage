@@ -7,23 +7,22 @@
         data-aos="fade-up"
       ></PagesTitle>
       <ul class="works__contents">
-        <template v-for="work in worksArray">
-          <li
-            :key="work.id"
-            class="works__contents__list"
-            data-aos="fade-up"
-            @click="openModal(work)"
-          >
-            <figure class="works__contents__image">
-              <nuxt-img :src="work.img" quality="100" preset="avatar" />
-              <a :href="work.link">
-                <figcaption class="works__contents__name">
-                  {{ work.name }}
-                </figcaption>
-              </a>
-            </figure>
-          </li>
-        </template>
+        <li
+          v-for="work in worksArray"
+          :key="work.id"
+          class="works__contents__list"
+          data-aos="fade-up"
+          @click="openModal(work)"
+        >
+          <figure class="works__contents__image">
+            <nuxt-img :src="work.img" quality="100" preset="avatar" />
+            <a :href="work.link">
+              <figcaption class="works__contents__name">
+                {{ work.name }}
+              </figcaption>
+            </a>
+          </figure>
+        </li>
         <Modal
           v-if="modalFlag"
           :val="postItem"
