@@ -1,7 +1,8 @@
 <template>
-  <Nuxt-link
+  <a
     v-if="link"
-    :to="`/${link}`"
+    :href="link"
+    target="_blank"
     class="el_btn"
     :style="{
       color: color,
@@ -14,7 +15,7 @@
     @click="$emit('parent-event')"
   >
     <slot />
-  </Nuxt-link>
+  </a>
   <button
     v-else
     class="el_btn"

@@ -56,7 +56,7 @@ export default {
         skills: 'HTML, CSS(SASS), JavaScript, Vue.js, Nuxt.js',
       },
       btn: {
-        link: 'blog',
+        link: 'https://kira-terakoya.netlify.app/',
         color: '#072720',
         bg: '#25c49f',
       },
